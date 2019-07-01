@@ -1,0 +1,50 @@
+variables:
+  PROJECT: "BIM"
+  DEV_NAMESPACE: "bim-develop"
+  STAGE_NAMESPACE: "bim-internal"
+  APP: "root"
+
+before_script:
+  - export DATE_ENV=$(date +'%d-%m-%Y')
+
+stages:
+  - build
+  - deploy
+
+cache:
+  untracked: true
+  paths:
+    - node_modules/
+    - bower_components/
+
+Build:
+  stage: build
+  before_script:
+    - npm install
+    - npm run bootstrap
+  script:
+    - CI="" npm run build
+  artifacts:
+    paths:
+    - src/packages/app/build/
+
+
+devDeploy:
+  stage: deploy
+  only:
+    - develop
+  before_script:
+    - TMPDIR=$(ssh suadm@192.168.13.46 "mktemp -d")
+  script:
+    - scp -r packages/app/build/* suadm@192.168.13.46:$TMPDIR
+    - ssh suadm@192.168.13.46 "sudo /opt/deploy front $PROJECT $DEV_NAMESPACE $APP $TMPDIR"
+
+masterDeploy:
+  stage: deploy
+  only:
+    - master
+  before_script:
+    - TMPDIR=$(ssh suadm@192.168.13.46 "mktemp -d")
+  script:
+    - scp -r packages/app/build/* suadm@192.168.13.46:$TMPDIR
+    - ssh suadm@192.168.13.46 "sudo /opt/deploy front $PROJECT $STAGE_NAMESPACE $APP $TMPDIR"
