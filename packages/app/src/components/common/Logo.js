@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import logo from '../../assets/icon.svg'
+import logo from '../../assets/mge-logo.png'
 
 const Logo = styled.img`
   display: inline-block;

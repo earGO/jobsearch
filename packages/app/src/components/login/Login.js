@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 
-import icon from '../../assets/icon.svg'
+import icon from '../../assets/mge-logo.png'
 import { actions, selectors } from './login-duck'
 import { InputLogin, LogoWrapper, Background } from './style'
 

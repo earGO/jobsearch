@@ -46,12 +46,28 @@ function CatalogItemForm({ form, width, elements, attributes, catalog, contentHe
 
           if (attr.link && attr.type === 'link') {
             if (attr.array) {
-              output.linkValue = Array.isArray(values[nick]) ? values[nick].filter(Boolean) : values[nick]
+              output.linkValue = Array.isArray(values[nick])
+                ? values[nick].reduce((acc, current) => {
+                    if (current) {
+                      return acc.concat(current)
+                    } else {
+                      return acc
+                    }
+                  }, [])
+                : values[nick]
             } else {
               output.linkValue = { id: values[nick] || null }
             }
           } else {
-            output.value = Array.isArray(values[nick]) ? values[nick].filter(Boolean) : values[nick]
+            output.value = Array.isArray(values[nick])
+              ? values[nick].reduce((acc, current) => {
+                  if (current) {
+                    return acc.concat(current)
+                  } else {
+                    return acc
+                  }
+                }, [])
+              : values[nick]
           }
 
           return output
