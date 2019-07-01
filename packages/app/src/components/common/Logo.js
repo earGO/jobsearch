@@ -12,8 +12,8 @@ const Logo = styled.img`
 `
 
 Logo.defaultProps = {
-  width: '60px',
-  height: '60px',
+  width: '40px',
+  height: '40px',
   alt: 'logo',
   src: logo,
 }

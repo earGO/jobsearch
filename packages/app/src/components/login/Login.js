@@ -51,7 +51,7 @@ function Login({ error, loading, loginStatus, authAction }) {
               <Absolute top={-52} width="100%">
                 <Flex justifyContent="center">
                   <LogoWrapper bg="white" height={90} width={90} boxShadowSize="md">
-                    <img src={icon} height={26} />
+                    <img src={icon} height={46} />
                   </LogoWrapper>
                 </Flex>
               </Absolute>
