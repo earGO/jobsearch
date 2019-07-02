@@ -212,7 +212,7 @@ const withForm = Form.create({
             acc[field.nick + '[' + i + '].' + field.nick] = Form.createFormField({ value: val[field.nick] })
           })
         } else if (field.type === 'link' && field.array) {
-          const data = (value.value.dict && value.value.dict.elements) || []
+          const data = (value.value && value.value.dict && value.value.dict.elements) || []
           data.forEach((val, i) => {
             acc[field.nick + '[' + i + '].' + field.nick] = Form.createFormField({
               value: val.id,
