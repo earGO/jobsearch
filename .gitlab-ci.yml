@@ -1,7 +1,7 @@
 variables:
   PROJECT: "BIM"
   DEV_NAMESPACE: "bim-develop"
-  STAGE_NAMESPACE: "bim-internal"
+  STAGE_NAMESPACE: "bim-stable"
   APP: "root"
 
 before_script:
