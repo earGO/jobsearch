@@ -18,7 +18,7 @@ function DynamicForm(props) {
   }, [])
 
   const add = () => {
-    const newKeys = keys.concat(id)
+    const newKeys = keys.concat(id + 1)
     setKeys(newKeys)
     setId(id + 1)
   }
