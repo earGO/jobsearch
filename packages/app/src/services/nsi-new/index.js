@@ -15,7 +15,7 @@ const elementsMock = {
 }
 
 export const name = 'ursip-nsi-service'
-export const api = pkg.ru_ursip.services[name]
+export const api = '/ws-nsi-new/api/v1'
 
 /* Types */
 const LOAD_DICTS = `${name}/LOAD_DICTS`
