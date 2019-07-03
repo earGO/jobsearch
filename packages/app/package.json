@@ -2,11 +2,6 @@
 	"name": "app",
 	"description": "Нормативно Cправочная Информация",
 	"version": "1.0.0",
-	"ru_ursip": {
-		"services": {
-			"ursip-nsi-service": "http://develop.ursip.local/api/bim-nsi-new-dev/api/v1"
-		}
-	},
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",

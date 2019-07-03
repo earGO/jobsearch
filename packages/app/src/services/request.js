@@ -16,7 +16,10 @@ export function* onRequestSaga(request) {
     if (Array.isArray(request)) {
       return request.map(req => ({
         ...req,
-        'X-Authorization': 'Bearer' + ' ' + token,
+        headers: {
+          ...request.headers,
+          'X-Authorization': 'Bearer' + ' ' + token,
+        },
       }))
     }
 
