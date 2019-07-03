@@ -38,6 +38,7 @@ function LinkField({ nick, value, onChange }) {
 
   return (
     <Select
+      isClearable
       placeholder="Выберите элемент"
       value={options[getElementId(value)]}
       onChange={handleSelect}

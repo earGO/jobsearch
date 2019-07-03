@@ -89,7 +89,7 @@ function CatalogItemForm({ form, width, elements, attributes, catalog, contentHe
         <Box py={2} px={3}>
           {catalog.hierarchy && (
             <FormItem key="parentId" mb={2} name="parentId" label="Родительский элемент" form={form}>
-              <Select options={Object.values(selectElements)} />
+              <Select isClearable options={Object.values(selectElements)} />
             </FormItem>
           )}
           {Object.values(attributes)
