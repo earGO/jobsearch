@@ -28,6 +28,9 @@ const StyledTable = styled(Table)`
     outline: none;
     margin-right: 0;
   }
+  .selected-row .rs-table-cell {
+    background-color: ${props => props.theme.colors.lightGrey};
+  }
 `
 
 const StyledCard = styled(Card)`
@@ -44,6 +47,7 @@ const StyledIcon = styled(Icon)`
 
 function CatalogTable() {
   const wrapperRef = React.useRef(null)
+  const [selectedElement, setSelectedElement] = React.useState(null)
 
   const dispatch = useDispatch()
   const catalogName = useSelector(selectors.currentCatalogName)
@@ -113,7 +117,10 @@ function CatalogTable() {
     }
   }
 
-  const handleEdit = row => dispatch(actions.showElementsForm(row))
+  const handleEdit = row => {
+    setSelectedElement(row.elementId)
+    dispatch(actions.showElementsForm(row))
+  }
 
   const handleDelete = row => e => {
     e.stopPropagation()
@@ -192,9 +199,10 @@ function CatalogTable() {
     }
   }
 
-  const handleRowClassName = e => {
-    // if (e && e.elementId === ) {
-    // }
+  const handleRowClassName = row => {
+    if (row && row.elementId === selectedElement) {
+      return 'selected-row'
+    }
   }
   const tree = arrayToTree(data, { id: 'elementId', parentId: 'parentId' })
   const tableData = tree.rootItems
