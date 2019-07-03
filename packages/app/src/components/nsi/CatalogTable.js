@@ -28,6 +28,9 @@ const StyledTable = styled(Table)`
     outline: none;
     margin-right: 0;
   }
+  .selected-row {
+    background-color: ${props => props.theme.colors.lightGrey};
+  }
   .selected-row .rs-table-cell {
     background-color: ${props => props.theme.colors.lightGrey};
   }

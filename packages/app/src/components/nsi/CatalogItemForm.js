@@ -29,12 +29,22 @@ function CatalogItemForm({ form, width, elements, attributes, catalog, contentHe
   }, {})
 
   function prepare({ parentId, ...values }) {
+    const removeEmptyData = array => {
+      return array.reduce((acc, current) => {
+        if (current) {
+          return acc.concat(current)
+        } else {
+          return acc
+        }
+      }, [])
+    }
+
     return {
       elementId: (row && row.elementId) || null,
       elementParent: (parentId && parentId.value && { parentId: parentId.value }) || null,
       deleted: false,
       values: Object.keys(values)
-        .filter(key => key[0] !== '_')
+        .filter(nick => nick[0] !== '_')
         .map(nick => {
           const attr = attributes[nick]
           const { value, ...rest } = (row && row.values && row.values[nick]) || {}
@@ -45,31 +55,10 @@ function CatalogItemForm({ form, width, elements, attributes, catalog, contentHe
           }
 
           if (attr.link && attr.type === 'link') {
-            if (attr.array) {
-              output.linkValue = Array.isArray(values[nick])
-                ? values[nick].reduce((acc, current) => {
-                    if (current) {
-                      return acc.concat(current)
-                    } else {
-                      return acc
-                    }
-                  }, [])
-                : values[nick]
-            } else {
-              output.linkValue = { id: values[nick] || null }
-            }
+            output.linkValue = Array.isArray(values[nick]) ? removeEmptyData(values[nick]) : values[nick]
           } else {
-            output.value = Array.isArray(values[nick])
-              ? values[nick].reduce((acc, current) => {
-                  if (current) {
-                    return acc.concat(current)
-                  } else {
-                    return acc
-                  }
-                }, [])
-              : values[nick]
+            output.value = Array.isArray(values[nick]) ? removeEmptyData(values[nick]) : values[nick]
           }
-
           return output
         }),
     }
@@ -100,7 +89,6 @@ function CatalogItemForm({ form, width, elements, attributes, catalog, contentHe
                   return (
                     <FormItem
                       required={attr.required}
-                      multiple={attr.array}
                       initialValue={0}
                       key={attr.nick}
                       mb={2}
@@ -130,15 +118,8 @@ function CatalogItemForm({ form, width, elements, attributes, catalog, contentHe
 
                 case attr.type === 'link':
                   return (
-                    <FormItem
-                      key={attr.nick}
-                      mb={2}
-                      name={attr.nick}
-                      label={attr.name}
-                      form={form}
-                      multiple={attr.array}
-                    >
-                      <LinkField nick={attr.link} />
+                    <FormItem key={attr.nick} mb={2} name={attr.nick} label={attr.name} form={form}>
+                      <LinkField multiple={attr.array} nick={attr.link} />
                     </FormItem>
                   )
 
@@ -182,7 +163,7 @@ CatalogItemForm.defaultProps = {
 }
 
 const withForm = Form.create({
-  mapPropsToFields({ row, catalog, elements, attributes }) {
+  mapPropsToFields({ row, elements, attributes }) {
     const fields = Object.values(attributes || {})
 
     const selectElements = Object.values(elements || {}).reduce((acc, { elementId, values }) => {
@@ -198,30 +179,26 @@ const withForm = Form.create({
     let out = {}
     if (row) {
       out = fields.reduce((acc, field) => {
-        const value = (row.values && row.values[field.nick]) || {}
+        const value = ((row.values && row.values[field.nick]) || {}).value
+        if (field.array && field.type !== 'link') {
+          const values = value || []
+          const data = Array.isArray(values) ? values : [values]
 
-        if (field.array) {
-          const length = Array.isArray(value.value)
-            ? value.value && value.value.length
-            : value.value && value.value.dict && value.value.dict.elements.length
-          acc['_initial_' + field.nick] = Form.createFormField({ value: Number(length) })
-        }
-
-        if (Array.isArray(value.value)) {
-          value.value.forEach((val, i) => {
+          acc['_initial_' + field.nick] = Form.createFormField({ value: Number(data.length) })
+          data.forEach((val, i) => {
             acc[field.nick + '[' + i + '].' + field.nick] = Form.createFormField({ value: val[field.nick] })
           })
-        } else if (field.type === 'link' && field.array) {
-          const data = (value.value && value.value.dict && value.value.dict.elements) || []
-          data.forEach((val, i) => {
-            acc[field.nick + '[' + i + '].' + field.nick] = Form.createFormField({
-              value: val.id,
-            })
-          })
-        } else {
-          acc[field.nick] = Form.createFormField({ value: value.value })
-        }
+        } else if (field.type === 'link') {
+          const elements = (value && value.dict && value.dict.elements) || []
 
+          if (field.array) {
+            acc[field.nick] = Form.createFormField({ value: elements.map(element => element.id) })
+          } else {
+            acc[field.nick] = Form.createFormField({ value: (elements[0] && elements[0].id) || null })
+          }
+        } else {
+          acc[field.nick] = Form.createFormField({ value })
+        }
         return acc
       }, {})
     }
