@@ -11,12 +11,15 @@ import { actions as loginActions } from '../components/login/login-duck'
 const useMocks = false
 export function* onRequestSaga(request) {
   const { token } = yield call(getTokens)
-  console.log(token, request)
+
   if (token) {
     if (Array.isArray(request)) {
       return request.map(req => ({
         ...req,
-        'X-Authorization': 'Bearer' + ' ' + token,
+        headers: {
+          ...request.headers,
+          'X-Authorization': 'Bearer' + ' ' + token,
+        },
       }))
     }
 
