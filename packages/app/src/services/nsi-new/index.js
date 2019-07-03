@@ -14,7 +14,8 @@ const elementsMock = {
 }
 
 export const name = 'ursip-nsi-service'
-export const api = '/ws-nsi-new/api/v1'
+export const api =
+  process.env.NODE_ENV === 'development' ? 'http://bim-dev.ursip.local/ws-nsi-new/api/v1' : '/ws-nsi-new/api/v1'
 
 /* Types */
 const LOAD_DICTS = `${name}/LOAD_DICTS`

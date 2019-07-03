@@ -1,7 +1,10 @@
 import { requestsReducer } from 'redux-saga-requests'
 
 const name = 'auth-api'
-
+const api =
+  process.env.NODE_ENV === 'development'
+    ? 'http://develop.ursip.local/api/access-control/v1'
+    : '/api/access-control/v1'
 /* Types */
 const AUTH = `${name}/AUTH`
 const REFRESH = `${name}/REFRESH`
@@ -16,7 +19,7 @@ const actions = {
     return {
       type: AUTH,
       request: {
-        url: '/api/access-control/v1/login',
+        url: api + '/login',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -29,7 +32,7 @@ const actions = {
     return {
       type: REFRESH,
       request: {
-        url: '/api/access-control/v1/refreshtoken',
+        url: api + '/refreshtoken',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
