@@ -1,5 +1,4 @@
 import { success, error } from 'redux-saga-requests'
-import pkg from '../../../package.json'
 import capitlizeObjectKeys from '../../utils/capitlizeObjectKeys'
 import dataToEntities from '../../utils/dataToEntinies'
 

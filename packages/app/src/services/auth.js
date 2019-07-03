@@ -16,7 +16,7 @@ const actions = {
     return {
       type: AUTH,
       request: {
-        url: 'http://develop.ursip.local/api/access-control/v1/login',
+        url: '/api/access-control/v1/login',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ const actions = {
     return {
       type: REFRESH,
       request: {
-        url: '/auth/refreshtoken',
+        url: '/api/access-control/v1/refreshtoken',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
