@@ -59,6 +59,8 @@ function CatalogTable() {
   const columns = useSelector(selectors.filteredAttributes)
   const loadingElements = useSelector(selectors.loadingElements)
   const columnsWidths = useSelector(selectors.getColumnWidths)
+  const searchQuery = useSelector(selectors.elementsSearchQuery)
+
   const [expandedRowKeys, setExpandedRowKeys] = React.useState([])
   const [bounds, setBounds] = React.useState({})
 
@@ -110,6 +112,7 @@ function CatalogTable() {
           </Text>
         )
       case typeof value === 'object':
+        // console.log(object)
         return <Text truncated>{extractLinkValue(value)}</Text>
 
       case !value:
@@ -208,13 +211,12 @@ function CatalogTable() {
     }
   }
   const tree = arrayToTree(data, { id: 'elementId', parentId: 'parentId' })
-  const tableData = tree.rootItems
 
   return (
     <StyledCard ref={wrapperRef}>
       <StyledTable
-        data={tableData}
-        isTree
+        data={Boolean(searchQuery) ? data : tree.rootItems}
+        isTree={!Boolean(searchQuery)}
         rowKey="elementId"
         loading={loadingElements}
         renderLoading={renderLoading}
