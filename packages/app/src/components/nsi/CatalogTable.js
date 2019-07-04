@@ -82,14 +82,14 @@ function CatalogTable() {
 
   const extractLinkValue = value => {
     if (value && value.dict && value.dict.elements) {
-      const data = value.dict.elements[0] || {}
-      const values = (data.values || []).map(val => val.valueAttr).join(', ')
-      return (
-        <Box>
-          <Text bold>{values}</Text>
-          <Text fontSize={0} />
-        </Box>
-      )
+      const firstColumn = (value.dict.metaAttributes.sort((a, b) => a.orders - b.orders)[0] || {}).nick
+
+      const values = value.dict.elements.reduce((acc, elem) => {
+        const value = elem.values.find(e => e.nick === firstColumn)
+        return acc.concat(value.valueAttr)
+      }, [])
+
+      return <Text>{values.join(', ')}</Text>
     }
 
     return null
@@ -112,7 +112,6 @@ function CatalogTable() {
           </Text>
         )
       case typeof value === 'object':
-        // console.log(object)
         return <Text truncated>{extractLinkValue(value)}</Text>
 
       case !value:

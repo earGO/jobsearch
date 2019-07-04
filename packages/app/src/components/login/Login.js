@@ -44,7 +44,7 @@ function Login({ error, loading, loginStatus, authAction }) {
           maxWidth={360}
         >
           <Relative width="100%">
-            <Text fontSize={5} color="highlight" align="center" pb={80}>
+            <Text fontSize={6} color="highlight" align="center" pb={80}>
               АИС &laquo;BIM&raquo;
             </Text>
             <Box>
