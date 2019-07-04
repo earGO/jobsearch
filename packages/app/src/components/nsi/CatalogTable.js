@@ -28,6 +28,12 @@ const StyledTable = styled(Table)`
     outline: none;
     margin-right: 0;
   }
+  .selected-row {
+    background-color: ${props => props.theme.colors.lightGrey};
+  }
+  .selected-row .rs-table-cell {
+    background-color: ${props => props.theme.colors.lightGrey};
+  }
 `
 
 const StyledCard = styled(Card)`
@@ -44,6 +50,7 @@ const StyledIcon = styled(Icon)`
 
 function CatalogTable() {
   const wrapperRef = React.useRef(null)
+  const [selectedElement, setSelectedElement] = React.useState(null)
 
   const dispatch = useDispatch()
   const catalogName = useSelector(selectors.currentCatalogName)
@@ -52,6 +59,8 @@ function CatalogTable() {
   const columns = useSelector(selectors.filteredAttributes)
   const loadingElements = useSelector(selectors.loadingElements)
   const columnsWidths = useSelector(selectors.getColumnWidths)
+  const searchQuery = useSelector(selectors.elementsSearchQuery)
+
   const [expandedRowKeys, setExpandedRowKeys] = React.useState([])
   const [bounds, setBounds] = React.useState({})
 
@@ -73,14 +82,14 @@ function CatalogTable() {
 
   const extractLinkValue = value => {
     if (value && value.dict && value.dict.elements) {
-      const data = value.dict.elements[0] || {}
-      const values = (data.values || []).map(val => val.valueAttr).join(', ')
-      return (
-        <Box>
-          <Text bold>{values}</Text>
-          <Text fontSize={0} />
-        </Box>
-      )
+      const firstColumn = (value.dict.metaAttributes.sort((a, b) => a.orders - b.orders)[0] || {}).nick
+
+      const values = value.dict.elements.reduce((acc, elem) => {
+        const value = elem.values.find(e => e.nick === firstColumn)
+        return acc.concat(value.valueAttr)
+      }, [])
+
+      return <Text>{values.join(', ')}</Text>
     }
 
     return null
@@ -113,15 +122,19 @@ function CatalogTable() {
     }
   }
 
-  const handleEdit = row => dispatch(actions.showElementsForm(row))
+  const handleEdit = row => {
+    setSelectedElement(row.elementId)
+    dispatch(actions.showElementsForm(row))
+  }
 
   const handleDelete = row => e => {
     e.stopPropagation()
+    const { _parent, children, ...rest } = row
     if (global.confirm(`Удалить строку?`)) {
       dispatch(
         nsiService.actions.saveDictRow(
           {
-            ...row,
+            ...rest,
             deleted: true,
           },
           catalogName,
@@ -192,22 +205,22 @@ function CatalogTable() {
     }
   }
 
-  const handleRowClassName = e => {
-    // if (e && e.elementId === ) {
-    // }
+  const handleRowClassName = row => {
+    if (row && row.elementId === selectedElement) {
+      return 'selected-row'
+    }
   }
   const tree = arrayToTree(data, { id: 'elementId', parentId: 'parentId' })
-  const tableData = tree.rootItems
 
   return (
     <StyledCard ref={wrapperRef}>
       <StyledTable
-        data={tableData}
-        isTree
+        data={Boolean(searchQuery) ? data : tree.rootItems}
+        isTree={!Boolean(searchQuery)}
         rowKey="elementId"
         loading={loadingElements}
         renderLoading={renderLoading}
-        height={bounds.height}
+        height={bounds.height - 82}
         headerHeight={50}
         rowHeight={50}
         onRowClick={handleEdit}
@@ -229,7 +242,14 @@ function CatalogTable() {
             {row => {
               return (
                 <Flex width="100%">
-                  <Button circle type="dashed" size="small" title="Удалить элемент" onClick={handleDelete(row)}>
+                  <Button
+                    disabled={row.children}
+                    circle
+                    type="dashed"
+                    size="small"
+                    title="Удалить элемент"
+                    onClick={handleDelete(row)}
+                  >
                     <StyledIcon name="trash-alt" top={1} />
                   </Button>
                   {catalog.hierarchy && (

@@ -1,6 +1,6 @@
 {
 	"name": "app",
-	"description": "Нормативно Cправочная Информация",
+	"description": "Нормативно-cправочная Информация",
 	"version": "1.0.0",
 	"scripts": {
 		"start": "react-scripts start",

@@ -63,12 +63,12 @@ function shittylizeElement(data) {
       if (linkValue) {
         if (Array.isArray(linkValue)) {
           return acc.concat(
-            linkValue.map((item, index) => {
+            linkValue.map((id, index) => {
               return {
                 ...rest,
                 deleted: Number(deleted),
                 NickAttr: nick,
-                linkValue: { id: item[nick] },
+                linkValue: { id },
                 orders: index,
               }
             }),
@@ -79,7 +79,7 @@ function shittylizeElement(data) {
           ...rest,
           deleted: Number(deleted),
           nickAttr: nick,
-          linkValue,
+          linkValue: { id: linkValue || null },
         })
       }
 
@@ -90,7 +90,7 @@ function shittylizeElement(data) {
               ...rest,
               deleted: Number(deleted),
               NickAttr: nick,
-              value: item[nick],
+              value: item[nick] || null,
               orders: index,
             }
           }),
@@ -206,13 +206,14 @@ function normalize(response) {
     }))
 }
 
-function normalizeValues(values) {
+function normalizeValues(values, attributes) {
   const params = [...new Set(values.map(v => v.nick))]
 
   return params.reduce((acc, p) => {
     const val = (values || []).filter(v => v.nick === p)
+    const attr = (attributes || []).find(a => a.nick === p)
 
-    if (val.length > 1) {
+    if (attr.arrayAttr && attr.typeAttr !== 'link') {
       const { deleted, valueAttr, value, ...rest } = val[0] || {}
       return acc.concat({
         ...rest,
@@ -232,14 +233,14 @@ function normalizeValues(values) {
   }, [])
 }
 
-function normalizeElements(elements) {
+function normalizeElements(elements, attributes) {
   return (elements || [])
     .filter(element => !element.deleted)
     .map(({ deleted, values, id, ...rest }) => ({
       ...rest,
       elementId: id,
       deleted: Boolean(deleted),
-      values: dataToEntities('nick', normalizeValues(values)),
+      values: dataToEntities('nick', normalizeValues(values, attributes)),
     }))
 }
 
@@ -300,7 +301,7 @@ export default function reducer(state = initialState, { type, payload }) {
           ...payload.data.reduce((acc, { dict }) => {
             return {
               ...acc,
-              [dict.nick]: dataToEntities('elementId', normalizeElements(dict.elements)),
+              [dict.nick]: dataToEntities('elementId', normalizeElements(dict.elements, dict.metaAttributes)),
             }
           }, {}),
         },
@@ -311,7 +312,10 @@ export default function reducer(state = initialState, { type, payload }) {
         ...state,
         elements: {
           ...state.elements,
-          [payload.data.dict.nick]: dataToEntities('elementId', normalizeElements(payload.data.dict.elements)),
+          [payload.data.dict.nick]: dataToEntities(
+            'elementId',
+            normalizeElements(payload.data.dict.elements, payload.data.dict.metaAttributes),
+          ),
         },
       }
 
