@@ -82,10 +82,10 @@ function CatalogTable() {
 
   const extractLinkValue = value => {
     if (value && value.dict && value.dict.elements) {
-      const firstColumn = (value.dict.metaAttributes.sort((a, b) => a.orders - b.orders)[0] || {}).nick
+      const column = (value.dict.metaAttributes.sort((a, b) => a.orders - b.orders)[1] || {}).nick
 
       const values = value.dict.elements.reduce((acc, elem) => {
-        const value = elem.values.find(e => e.nick === firstColumn) || {}
+        const value = elem.values.find(e => e.nick === column) || {}
         return acc.concat(value.valueAttr)
       }, [])
 
