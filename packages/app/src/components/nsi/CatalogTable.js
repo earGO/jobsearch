@@ -85,7 +85,7 @@ function CatalogTable() {
       const firstColumn = (value.dict.metaAttributes.sort((a, b) => a.orders - b.orders)[0] || {}).nick
 
       const values = value.dict.elements.reduce((acc, elem) => {
-        const value = elem.values.find(e => e.nick === firstColumn)
+        const value = elem.values.find(e => e.nick === firstColumn) || {}
         return acc.concat(value.valueAttr)
       }, [])
 
