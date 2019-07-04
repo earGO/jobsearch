@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import logo from '../../assets/mge-logo.png'
+import logo from '../../assets/mos.png'
 
 const Logo = styled.img`
   display: inline-block;
@@ -12,8 +12,8 @@ const Logo = styled.img`
 `
 
 Logo.defaultProps = {
-  width: '40px',
-  height: '40px',
+  width: '35px',
+  height: '35px',
   alt: 'logo',
   src: logo,
 }

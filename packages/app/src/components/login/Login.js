@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 
-import icon from '../../assets/mge-logo.png'
+import icon from '../../assets/mos.png'
 import { actions, selectors } from './login-duck'
 import { InputLogin, LogoWrapper, Background } from './style'
 
@@ -51,7 +51,7 @@ function Login({ error, loading, loginStatus, authAction }) {
               <Absolute top={-52} width="100%">
                 <Flex justifyContent="center">
                   <LogoWrapper bg="white" height={90} width={90} boxShadowSize="md">
-                    <img src={icon} height={46} />
+                    <img src={icon} height={40} />
                   </LogoWrapper>
                 </Flex>
               </Absolute>
