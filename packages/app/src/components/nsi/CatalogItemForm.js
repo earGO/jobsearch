@@ -74,7 +74,7 @@ function CatalogItemForm({ form, width, elements, attributes, catalog, contentHe
   return (
     <Card id="catalogItemForm" bg="white" p={2} width={width}>
       <Heading>&laquo;{catalog.name}&raquo;</Heading>
-      <Scrollbars style={{ height: contentHeight }} autoHide>
+      <Scrollbars style={{ height: contentHeight }}>
         <Box py={2} px={3}>
           {catalog.hierarchy && (
             <FormItem key="parentId" mb={2} name="parentId" label="Родительский элемент" form={form}>
