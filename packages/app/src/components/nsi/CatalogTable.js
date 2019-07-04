@@ -130,11 +130,12 @@ function CatalogTable() {
 
   const handleDelete = row => e => {
     e.stopPropagation()
+    const { _parent, children, ...rest } = row
     if (global.confirm(`Удалить строку?`)) {
       dispatch(
         nsiService.actions.saveDictRow(
           {
-            ...row,
+            ...rest,
             deleted: true,
           },
           catalogName,
@@ -242,7 +243,14 @@ function CatalogTable() {
             {row => {
               return (
                 <Flex width="100%">
-                  <Button circle type="dashed" size="small" title="Удалить элемент" onClick={handleDelete(row)}>
+                  <Button
+                    disabled={row.children}
+                    circle
+                    type="dashed"
+                    size="small"
+                    title="Удалить элемент"
+                    onClick={handleDelete(row)}
+                  >
                     <StyledIcon name="trash-alt" top={1} />
                   </Button>
                   {catalog.hierarchy && (

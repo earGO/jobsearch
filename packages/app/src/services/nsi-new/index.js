@@ -166,6 +166,8 @@ export const actions = {
     }
   },
   saveDictRow(data, nickDict) {
+    console.log(data)
+
     return {
       type: SAVE_DICT_ROW,
       payload: {
@@ -308,6 +310,7 @@ export default function reducer(state = initialState, { type, payload }) {
       }
 
     case success(SAVE_DICT_ROW):
+      console.log(payload)
       return {
         ...state,
         elements: {
