@@ -30,7 +30,7 @@ function Layout({ children, width, maxWidth, history, ...props }) {
             </Box>
             <Box ml={3}>
               <Text color="white" fontSize={2}>
-                Нормативно-cправочная Информация
+                Нормативно-cправочная информация
               </Text>
             </Box>
             <Box ml="auto">

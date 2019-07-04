@@ -45,7 +45,7 @@ function Login({ error, loading, loginStatus, authAction }) {
         >
           <Relative width="100%">
             <Text fontSize={5} color="highlight" align="center" pb={80}>
-              Сервис поддержки функций <br /> участников реализации <br /> ТИМ-проектов
+              АИС &laquo;BIM&raquo;
             </Text>
             <Box>
               <Absolute top={-52} width="100%">
