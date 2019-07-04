@@ -26,7 +26,7 @@ function LinkField({ nick, value, onChange, multiple }) {
     const secondValue = values[second.nick] || {}
 
     acc[elementId] = {
-      label: `${firstValue.value} ${secondValue.value || ''}`,
+      label: `${secondValue.value || ''}`,
       value: elementId,
     }
 
