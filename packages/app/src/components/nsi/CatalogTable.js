@@ -220,7 +220,7 @@ function CatalogTable() {
         rowKey="elementId"
         loading={loadingElements}
         renderLoading={renderLoading}
-        height={bounds.height}
+        height={bounds.height - 82}
         headerHeight={50}
         rowHeight={50}
         onRowClick={handleEdit}
