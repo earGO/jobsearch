@@ -96,8 +96,9 @@ function AttributeForm({
               rules: [
                 {
                   validator: (rule, value, callback) => {
-                    if (attribute && !attribute.nick && attributes.find(attr => attr.nick === value)) {
-                      callback('Такой ник уже используется в этом справочнике')
+                    const isAttributeExists = attributes.find(attr => attr.nick === value)
+                    if (isAttributeExists) {
+                      callback('Атрибут с таким ником уже существует')
                     }
                     callback()
                   },
