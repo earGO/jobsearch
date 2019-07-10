@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom'
 
 import Logo from './Logo'
 import { actions as loginActions } from '../login/login-duck'
-import pkg from '../../../package.json'
 
 /**
  * Main application layout

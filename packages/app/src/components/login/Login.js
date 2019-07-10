@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { Absolute, Relative, Card, Box, Button, Text, Flex, Icon, Input } from '@ursip/design-system'
+import { Absolute, Relative, Card, Box, Button, Text, Flex, Icon } from '@ursip/design-system'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
@@ -51,7 +51,7 @@ function Login({ error, loading, loginStatus, authAction }) {
               <Absolute top={-52} width="100%">
                 <Flex justifyContent="center">
                   <LogoWrapper bg="white" height={90} width={90} boxShadowSize="md">
-                    <img src={icon} height={40} />
+                    <img alt="logo" src={icon} height={40} />
                   </LogoWrapper>
                 </Flex>
               </Absolute>
