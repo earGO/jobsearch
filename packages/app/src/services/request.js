@@ -12,24 +12,16 @@ const useMocks = false
 export function* onRequestSaga(request) {
   const { token } = yield call(getTokens)
 
-  if (token) {
-    if (Array.isArray(request)) {
-      return request.map(req => ({
-        ...req,
-        headers: {
-          ...request.headers,
-          'X-Authorization': 'Bearer' + ' ' + token,
-        },
-      }))
-    }
+  const setAuthToken = request => ({
+    ...request,
+    headers: {
+      ...request.headers,
+      'X-Authorization': `Bearer ${token}`,
+    },
+  })
 
-    return {
-      ...request,
-      headers: {
-        ...request.headers,
-        'X-Authorization': 'Bearer' + ' ' + token,
-      },
-    }
+  if (token) {
+    return Array.isArray(request) ? request.map(setAuthToken) : setAuthToken(request)
   } else {
     return request
   }

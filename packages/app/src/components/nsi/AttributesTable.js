@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Table, Toggle, Flex, Box, Text, Icon, Tooltip, Button } from '@ursip/design-system'
 import SortAttributeRow from './SortAttributeRow'
 import AttributeForm from './AttributeForm'

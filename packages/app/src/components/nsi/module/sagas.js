@@ -2,14 +2,12 @@ import { all, put, select, takeEvery } from 'redux-saga/effects'
 import { success } from 'redux-saga-requests'
 
 import * as types from './types'
-// import * as actions from './actions'
 import * as selectors from './selectors'
-
 import * as nsiService from '../../../services/nsi-new'
 
 const report = function*({ payload }) {
   // TODO: Rewrite to ajax
-  global.location = `${nsiService.api}/reports/excel/nickDict/${payload.nick}`
+  yield (global.location = `${nsiService.api}/reports/excel/nickDict/${payload.nick}`)
 }
 
 const loadCurrenCatalog = function*() {

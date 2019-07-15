@@ -95,12 +95,16 @@ function AttributeForm({
             options={{
               rules: [
                 {
-                  validator: (rule, value, callback) => {
-                    const isAttributeExists = attributes.find(attr => attr.nick === value)
-                    if (isAttributeExists) {
-                      callback('Атрибут с таким ником уже существует')
+                  validator: (_, value, callback) => {
+                    if (Boolean(attribute && attribute.nick)) {
+                      return callback()
                     }
-                    callback()
+
+                    if (attributes.find(attr => attr.nick === value)) {
+                      return callback('Атрибут с таким ником уже существует')
+                    }
+
+                    return callback()
                   },
                 },
               ],

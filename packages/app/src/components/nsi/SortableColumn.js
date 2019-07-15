@@ -6,8 +6,6 @@ import styled from 'styled-components'
 import * as actions from './module/actions'
 import * as selectors from './module/selectors'
 
-import { saveState } from '../../utils/storage'
-
 const SortIcon = styled(({ isActive, up, ...rest }) => <Icon name="caret-down" {...rest} />)`
   cursor: pointer;
   transform: ${props => props.up && 'rotate(180deg)'};

@@ -1,17 +1,6 @@
-import { success, error } from 'redux-saga-requests'
+import { success } from 'redux-saga-requests'
 import capitlizeObjectKeys from '../../utils/capitlizeObjectKeys'
 import dataToEntities from '../../utils/dataToEntinies'
-
-import timetable from './timetable.json'
-import dict from './dict.json'
-import multi from './multi.json'
-import unitMeasure from './unitMeasure.json'
-
-const elementsMock = {
-  MultipleDataTestCatalog: multi,
-  Timetable: timetable,
-  unitMeasure: unitMeasure,
-}
 
 export const name = 'ursip-nsi-service'
 export const api =
@@ -117,11 +106,6 @@ export const actions = {
           url: `${api}/nsi/meta/dict`,
         },
       },
-      meta: {
-        mock: requestConfig => {
-          return dict
-        },
-      },
     }
   },
   loadElements(nick) {
@@ -133,13 +117,6 @@ export const actions = {
         request: nicks.map(name => ({
           url: `${api}/nsi/dict/${name}`,
         })),
-      },
-      meta: {
-        mock: requestConfig => {
-          const arr = requestConfig.url.split('/')
-          const name = arr[arr.length - 1]
-          return elementsMock[name]
-        },
       },
     }
   },

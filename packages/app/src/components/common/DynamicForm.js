@@ -15,7 +15,7 @@ function DynamicForm(props) {
       setKeys(initialKeys)
       setId(initialCount)
     }
-  }, [])
+  }, [form, group])
 
   const add = () => {
     const newKeys = keys.concat(id + 1)
@@ -26,11 +26,6 @@ function DynamicForm(props) {
   const remove = keyForRemove => {
     const newKeys = keys.filter(key => key !== keyForRemove)
     setKeys(newKeys)
-    // const groupData = form.getFieldValue(group)
-
-    // form.setFieldsValue({
-    //   [group]: groupData.filter((_, index) => newKeys.includes(index)),
-    // })
   }
 
   const getFieldName = (name, group, index) => `${group}[${index}].${name}`

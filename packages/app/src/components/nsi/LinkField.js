@@ -18,11 +18,9 @@ function LinkField({ nick, value, onChange, multiple }) {
     }
   }
 
-  const first = attributes[0] || {}
   const second = attributes[1] || {}
 
   const options = elements.reduce((acc, { elementId, values }) => {
-    const firstValue = values[first.nick] || {}
     const secondValue = values[second.nick] || {}
 
     acc[elementId] = {
