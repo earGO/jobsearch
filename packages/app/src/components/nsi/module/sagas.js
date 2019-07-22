@@ -3,7 +3,7 @@ import { success } from 'redux-saga-requests'
 
 import * as types from './types'
 import * as selectors from './selectors'
-import * as nsiService from '../../../services/nsi-new'
+import * as nsiService from '../../../services/nsi'
 
 const report = function*({ payload }) {
   // TODO: Rewrite to ajax

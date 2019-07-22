@@ -4,7 +4,7 @@ import * as R from 'ramda'
 import { namespace } from './types'
 import { initialState } from './reducers'
 
-import * as nsi from '../../../services/nsi-new'
+import * as nsi from '../../../services/nsi'
 
 const stateSelector = state => state[namespace] || initialState
 

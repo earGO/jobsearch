@@ -4,7 +4,7 @@ import sagas from './sagas'
 
 import * as actions from './actions'
 
-import * as nsiService from '../../../services/nsi-new'
+import * as nsiService from '../../../services/nsi'
 
 export const baseRoute = '/nsi'
 
