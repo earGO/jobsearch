@@ -3,10 +3,10 @@ import { requestsReducer } from 'redux-saga-requests'
 const name = 'auth-api'
 const api =
   process.env.NODE_ENV === 'development'
-    ? 'http://develop.ursip.local/api/access-control/v1'
-    : '/api/access-control/v1'
+    ? 'http://bim-dev.ursip.local/ws-access-control/v1'
+    : '/ws-access-control/v1'
 
-/* Types */
+  /* Types */
 const AUTH = `${name}/AUTH`
 const REFRESH = `${name}/REFRESH`
 
