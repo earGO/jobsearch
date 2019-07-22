@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { Text, Heading, Box, Flex } from '@ursip/design-system'
 import DropdownMenuButton from '../common/DropdownMenuButton'
 
-import * as nsiService from '../../services/nsi-new'
+import * as nsiService from '../../services/nsi'
 import Modal from '../common/Modal'
 import CatalogItemForm from './CatalogItemForm'
 

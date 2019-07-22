@@ -5,7 +5,7 @@ import { Table, Flex, Box, Text, Card, Icon, Button } from '@ursip/design-system
 
 import SortableColumn from './SortableColumn'
 import Loading from '../common/Loading'
-import * as nsiService from '../../services/nsi-new'
+import * as nsiService from '../../services/nsi'
 import arrayToTree from '../../utils/arrayToTree'
 import * as selectors from './module/selectors'
 import * as actions from './module/actions'
@@ -142,6 +142,7 @@ function CatalogTable() {
       )
     }
   }
+
   const handleAddChild = row => e => {
     e.stopPropagation()
 

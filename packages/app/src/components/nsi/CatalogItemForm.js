@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { compose } from 'redux'
 import Scrollbars from 'react-custom-scrollbars'
 import { Card, Flex, Form, Input, Button, Heading, Box, Toggle, Select } from '@ursip/design-system'
-import * as nsiService from '../../services/nsi-new'
+import * as nsiService from '../../services/nsi'
 import FormItem from '../common/FormItem'
 import LinkField from './LinkField'
 
