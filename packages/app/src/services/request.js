@@ -1,14 +1,11 @@
 import { createRequestInstance, watchRequests, requestsPromiseMiddleware, sendRequest } from 'redux-saga-requests'
 import { createDriver } from 'redux-saga-requests-fetch'
-import { createDriver as createMockDriver } from 'redux-saga-requests-mock'
-
 import { call, put } from 'redux-saga/effects'
-import mocks from './mocks'
+
 import { getTokens, checkToken, checkIfUnauthorized, putTokens } from '../utils/storage'
 import { actions as authActions } from '../services/auth'
 import { actions as loginActions } from '../components/login/login-duck'
 
-const useMocks = false
 export function* onRequestSaga(request) {
   const { token } = yield call(getTokens)
 
@@ -55,7 +52,7 @@ export function* onErrorSaga(error, action) {
 
 export function* requestSaga() {
   yield createRequestInstance({
-    driver: useMocks ? createMockDriver(mocks) : createDriver(window.fetch),
+    driver: createDriver(window.fetch),
     onRequest: onRequestSaga,
     onError: onErrorSaga,
   })
