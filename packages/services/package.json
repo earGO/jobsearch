@@ -1,0 +1,22 @@
+{
+  "name": "@ursip-box-front/services",
+  "version": "1.0.6",
+  "description": "Services for backend and api",
+  "ru_ursip": {
+    "services": {
+      "ursip-nsi-service": "http://develop.ursip.local/ws-nsi/v1",
+      "ursip-oshs-service": "http://develop.ursip.local/ws-oshs/v1",
+      "ursip-auth-service": "http://develop.ursip.local/ws-access-control/v1/login"
+    }
+  },
+  "main": "index.js",
+  "main:src": "index.js",
+  "dependencies": {
+    "@ursip-box-front/utils": "^1.0.4",
+    "redux-saga-requests": "^0.25.0"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
