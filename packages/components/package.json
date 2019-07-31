@@ -1,0 +1,39 @@
+{
+  "name": "@ursip-box-front/components",
+  "version": "1.0.9",
+  "main": "index.js",
+  "main:src": "index.js",
+  "dependencies": {
+    "@react-workspaces/react-scripts": "3.0.0-alpha-04",
+    "@styled-system/theme-get": "^5.0.12",
+    "@ursip-box-front/design-system-local": "^1.2.3",
+    "antd": "^3.20.7",
+    "cross-env": "5.0.5",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "lodash": "^4.17.14",
+    "material-icons-react": "^1.0.4",
+    "moment": "^2.24.0",
+    "prop-types": "^15.6.2",
+    "re-resizable": "^5.0.1",
+    "react": "^16.8.6",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "^16.8.6",
+    "react-redux": "7.1.0",
+    "react-router-dom": "^5.0.1",
+    "redux": "4.0.1",
+    "redux-dynamic-modules": "5.0.0-alpha.0",
+    "redux-dynamic-modules-react": "5.0.0-alpha.0",
+    "redux-logger": "3.0.6",
+    "redux-saga": "1.0.3",
+    "redux-saga-requests": "0.25.0",
+    "redux-thunk": "2.3.0",
+    "reselect": "4.0.0",
+    "styled-components": "^4.3.2",
+    "styled-system": "^5.0.12"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,14 +1,75 @@
 {
-  "name": "root",
+  "name": "ursip-box-frontend",
+  "version": "1.1.5",
   "private": true,
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "start": "lerna run start --parallel",
-    "clean": "lerna clean",
-    "build": "lerna run build --parallel",
-    "test": "npm run build:prod && lerna run test"
+    "unit": "jest --watchAll",
+    "make-version": "lerna version && yarn",
+    "make-patch": "lerna version patch --conventional-commits --create-release gitlab --no-push --changelog-preset react && yarn",
+    "make-minor": "lerna version minor --conventional-commits --create-release gitlab --no-push --changelog-preset react && yarn",
+    "make-major": "lerna version major --conventional-commits --create-release gitlab --no-push --changelog-preset react && yarn",
+    "lerna-publish": "lerna publish from-package --yes --conventional-commits --changelog-preset react",
+    "storybook": "cd packages/storybook && start-storybook -p 9009 -s public",
+    "build-storybook": "lerna exec --scope library-name -- babel src -d dist --copy-files --ignore \"src/stories/\"",
+    "watch-storybook": "lerna exec --scope library-name -- babel src -d dist --watch --copy-files --ignore \"src/stories/\"",
+    "start-front": "cd packages/apps/box-frontend && set PORT=2518 && react-scripts start",
+    "clean": "oao clean",
+    "status": "oao status",
+    "remove-all": "oao remove-all",
+    "mock-api": "cd .mock && json-server dbSeparateEndpointsV2.json --watch --port 3421",
+    "build-bim": "cd packages/apps/box-frontend && yarn build"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/apps/*",
+      "packages/components",
+      "packages/storybook",
+      "packages/utils",
+      "packages/services",
+      "packages/modules",
+      "packages/design-system-local"
+    ],
+    "nohoist": [
+      "**/webpack-dev-server",
+      "**/babel-loader"
+    ]
   },
   "devDependencies": {
-    "lerna": "^3.14.1"
+    "@babel/plugin-proposal-export-default-from": "^7.5.2",
+    "@babel/plugin-transform-async-to-generator": "^7.5.0",
+    "@babel/plugin-transform-runtime": "^7.5.0",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.8.0",
+    "babel-plugin-inline-react-svg": "^1.1.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "core-js": "3",
+    "fetch-mock": "^7.3.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
+    "jest-prop-type-error": "^1.1.0",
+    "lerna": "^3.10.7",
+    "oao": "^1.6.0",
+    "prettier": "^1.16.1"
+  },
+  "dependencies": {
+    "aphrodite": "^2.3.1"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "statements": 98,
+        "lines": 98
+      }
+    },
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/setupTests.{js,jsx}",
+      "!src/serviceWorker.{js,jsx}",
+      "!src/**/*.(spec|test|stories).{js,jsx}"
+    ]
   }
 }
