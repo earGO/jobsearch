@@ -20,14 +20,12 @@ cache:
 Build:
   stage: build
   before_script:
-    - npm install
-    - npm run bootstrap
+    - yarn
   script:
-    - CI="" npm run build
+    - CI="" yarn build-bim
   artifacts:
     paths:
-    - src/packages/app/build/
-
+    - packages/
 
 devDeploy:
   stage: deploy
