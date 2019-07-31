@@ -34,7 +34,7 @@ devDeploy:
   before_script:
     - TMPDIR=$(ssh suadm@192.168.13.46 "mktemp -d")
   script:
-    - scp -r packages/app/build/* suadm@192.168.13.46:$TMPDIR
+    - scp -r packages/apps/box-frontend/build/* suadm@192.168.13.46:$TMPDIR
     - ssh suadm@192.168.13.46 "sudo /opt/deploy front $PROJECT $DEV_NAMESPACE $APP $TMPDIR"
 
 masterDeploy:
