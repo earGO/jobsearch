@@ -1,41 +1,35 @@
 import React from 'react'
-import {Table, Flex, Box, Button, theme} from '../../import'
-import {Icon} from '../../import'
-import {TableContentBox} from '../../import'
+import {Table, Flex, Box, Button, theme,DropdownMenu,Icon,TableContentBox} from '../../import'
 import styled from 'styled-components'
 
-const ActionButton = styled(Button)`
-	position: relative;
-	top: 3px;
-	transition: all 0.15s ease-in-out;
-	&:hover {
-		transform: scale(1.15);
-	}
-`
-
 const ProjectButton = styled(Button)`
-	transition: all 0.25s ease-in-out;
+	transition: all;
+	transition-duration: ${props=>props.theme.duration.fast};
+	transition-timing-function: ${props=>props.theme.timingFunctions.easeInOut};
 	&:hover {
+			color:${props=>props.theme.colors.primary};
 		transform: scale(1.05);
 	}
 `
 
-/* Since I cann't alter <Icon> color from parent, I've made some wrappers, and hide one while showing another
-that has Icon styled as needed. It's a crutch, but it's working one
- */
-const UnActionIcon = styled(Box)`
-	display: block;
-	${ActionButton}:hover & {
-		display: none;
+const ActionHover = styled(Box)`
+	transition: all;
+	transition-duration: ${props=>props.theme.duration.fast};
+	transition-timing-function: ${props=>props.theme.timingFunctions.easeInOut};
+	cursor: pointer;
+	i{
+		color:black;
 	}
+	:hover {	
+	i{
+		color:${props=>props.theme.colors.primary};
+		transform: scale(1.15);
+	}
+	}
+
 `
 
-const ActionIcon = styled(Box)`
-	display: none;
-	${ActionButton}:hover & {
-		display: block;
-	}
-`
+
 
 /* Here's where I'll render the progress svg based on passed progress data */
 const ProgressCell = ({rowData, dataKey, ...props}) => (
@@ -48,25 +42,36 @@ const ProgressCell = ({rowData, dataKey, ...props}) => (
 
 /* Here's where action to open project module will be at */
 const ActionCell = ({rowData, dataKey, ...props}) => {
-	function handleAction() {
-		console.log(rowData[dataKey])
-		console.log(theme.colors.blue)
-	}
+	const FunctionalContent = [
+		{
+			name: 'Добавить к сравнению',
+			HandleClick: () => {
+				console.log('clicked ' + dataKey)
+			}
+		},
+		{
+			name: 'Доступ',
+			HandleClick: ()=> {
+				console.log('clicked ' + dataKey)
+			}
+		},
+		{
+			name: 'Редактировать',
+			HandleClick: ()=> {
+				console.log('clicked ' + dataKey)
+			}
+		}
+	]
 	return (
 		<Table.Cell {...props} style={{padding: 0}}>
 			<Flex justifyContent={'center'} width={96}>
-				<ActionButton type={`flat`}>
-					<UnActionIcon>
-						<Icon name={'more_horiz'} onClick={handleAction} />
-					</UnActionIcon>
-					<ActionIcon>
+				<ActionHover>
+					<DropdownMenu content={FunctionalContent} shiftLeft={-80}>
 						<Icon
 							name={'more_horiz'}
-							onClick={handleAction}
-							color={'primary'}
 						/>
-					</ActionIcon>
-				</ActionButton>
+					</DropdownMenu>
+				</ActionHover>
 			</Flex>
 		</Table.Cell>
 	)
@@ -141,7 +146,7 @@ function ProjectsTable({projects, openTable, projectClick, history, ...props}) {
 
 					<Table.Column width={96}>
 						<Table.HeaderCell>Действия</Table.HeaderCell>
-						<ActionCell dataKey="progress" />
+						<ActionCell dataKey="actions" />
 					</Table.Column>
 				</Table>
 			</TableContentBox>

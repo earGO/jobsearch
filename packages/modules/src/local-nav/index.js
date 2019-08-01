@@ -49,7 +49,7 @@ function LkNav({scrollTop, onUpButtonClick, ...props}) {
 							alignItems={'center'}
 							onClick={onUpButtonClick}
 						>
-							<Icon name={'arrow_upward'} size={1} />
+							<Icon name={'arrow_upward'} size={18}/>
 							<Text fontSize={'12px'}>Наверх</Text>
 						</CustomButton>
 						<ModuleNavigationTabs

@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef} from 'react'
 import {Box, Flex, Scrollbars, ProjectManager, LocalNavigation} from '../import'
 import ProjectManagerLazy from '../LazyLoad/ProjectManagerLazy'
 import ProjectCard from '../LazyLoad/ProjectCard'

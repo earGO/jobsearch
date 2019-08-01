@@ -114,9 +114,11 @@ function LK({history, ...props}) {
 
 	/* When dates removed from datepicker - remove filtering from table data */
 	const handleDateFilterChange = (startDate, endDate, criteria) => {
+		console.log(startDate)
 		if (startDate && endDate) {
 			setFilterStartDate(startDate.toDate().getTime())
 			setFilterEndDate(endDate.toDate().getTime())
+			setFilterCriteria(criteria)
 		} else {
 			setFilterCriteria(criteria)
 			setFilterEndDate(endDate)
@@ -154,7 +156,7 @@ function LK({history, ...props}) {
 							<Icon
 								name={'fullscreen'}
 								color={'primary'}
-								size={1}
+								size={18}
 							/>
 						</IconPosition>
 						<Flex flexFlow={'row nowrap'} justifyContent={'center'}>

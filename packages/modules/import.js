@@ -1,3 +1,5 @@
+import DropdownMenu from "@ursip-box-front/design-system-local/src/blocks/DropdownMenu";
+
 export {
 	ContentBox,
 	Loading,
@@ -46,7 +48,9 @@ export {
 	Absolute,
 	Scrollbars,
 	Divider,
-	Checkbox
+	Checkbox,
+	RangeDatePicker,
+	DropdownMenu
 } from '@ursip-box-front/design-system-local'
 
 export {
