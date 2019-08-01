@@ -1,5 +1,5 @@
 import {namespace} from './types'
-import {personalNavigation} from '../../../import'
+import {localNavigation} from '../../../import'
 import reducers, {initialState} from './reducers'
 
 import sagas from './sagas'
@@ -7,12 +7,12 @@ import sagas from './sagas'
 export default {
 	id: namespace,
 	reducerMap: {
-		[personalNavigation.name]: personalNavigation.reducer,
+		[localNavigation.name]: localNavigation.reducer,
 		[namespace]: (state = initialState, action) => ({
 			...state,
 			...(reducers[action.type] && reducers[action.type](state, action))
 		})
 	},
 	sagas: [sagas],
-	initialActions: [personalNavigation.actions.loadTabs()]
+	initialActions: [localNavigation.actions.loadTabs()]
 }

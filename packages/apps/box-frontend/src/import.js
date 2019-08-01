@@ -3,10 +3,10 @@ export {
 	nsi,
 	lk,
 	TopNav,
-	LkNav,
 	Login,
 	request,
-	oshs
+	oshs,
+	LocalNavigation
 } from '@ursip-box-front/modules'
 export {
 	Loading,

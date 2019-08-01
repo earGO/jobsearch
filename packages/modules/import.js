@@ -54,10 +54,10 @@ export {
 	nsi,
 	lk,
 	topNavigation,
-	personalNavigation,
 	mocks,
 	oshs,
-	auth
+	auth,
+	localNavigation
 } from '@ursip-box-front/services'
 
 export {arrayToTree, formatDate, storageUtils} from '@ursip-box-front/utils'

@@ -2,11 +2,11 @@ import {createSelector} from 'reselect'
 
 import {namespace} from './types'
 import {initialState} from './reducers'
-import {personalNavigation} from '../../../import'
+import {localNavigation as service} from '../../../import'
 
 const namespaceStateSelector = state => state[namespace] || initialState
 const serviceDataSelector = state =>
-	state[personalNavigation.name] || initialState
+	state[service.name] || initialState
 
 export const tabsLoading = createSelector(
 	namespaceStateSelector,

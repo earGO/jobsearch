@@ -4,7 +4,7 @@ import {success} from 'redux-saga-requests'
 import * as types from './types'
 import * as actions from './actions'
 import * as selectors from './selectors'
-import {personalNavigation} from '../../../import'
+import {localNavigation as service} from '../../../import'
 
 /* It preselects a tab first time project loaded */
 const preSelectTab = function*() {
@@ -15,6 +15,6 @@ const preSelectTab = function*() {
 
 export default function*() {
 	yield all([
-		takeLatest(success(personalNavigation.types.LOAD_TABS), preSelectTab)
+		takeLatest(success(service.types.LOAD_TABS), preSelectTab)
 	])
 }

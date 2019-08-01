@@ -1,5 +1,5 @@
-import LkNavModule from './src/lk-nav/module'
-import * as LocalNavigationTypes from './src/lk-nav/module/types'
+import LkNavModule from './src/local-nav/module'
+import * as LocalNavigationTypes from './src/local-nav/module/types'
 
 export const LocalNavigation = {
 	LkNavModule,

@@ -26,13 +26,13 @@ const routes = [
 		path: '/',
 		exact: true,
 		private: true,
-		component: React.lazy(() => import('./Compound/LK'))
+		component: React.lazy(() => import('./Compound/ProjectManager'))
 	},
 	{
 		key: 'backendMain',
 		path: '/main',
 		private: true,
-		component: React.lazy(() => import('./Compound/LK'))
+		component: React.lazy(() => import('./Compound/ProjectManager'))
 	},
 	{
 		key: 'lk',
