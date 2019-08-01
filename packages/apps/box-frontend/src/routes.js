@@ -53,7 +53,6 @@ const routes = [
 		private: true,
 		component: React.lazy(() => import('./LazyLoad/Nsi'))
 	},
-
 	{
 		key: 'Oshs',
 		private: true,

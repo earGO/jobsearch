@@ -154,7 +154,7 @@ function Login({...props}) {
 						</Box>
 					</Relative>
 
-					{loginStatus ? <Redirect to="/nsi" /> : null}
+					{loginStatus ? <Redirect to="/" /> : null}
 				</Flex>
 			</Flex>
 		</Box>
