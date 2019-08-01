@@ -47,7 +47,7 @@ const HTMLInput = styled.input`
   border-radius: ${props => props.theme.radii[1] + 'px'};
   transition: all ${props => props.theme.duration.fast};
   :hover {
-    border-color: ${themeGet('colors.black', '#3a3a3a')}
+    border-color: ${themeGet('colors.primary', '#3a3a3a')}
   } 
   :focus {
     outline: none;

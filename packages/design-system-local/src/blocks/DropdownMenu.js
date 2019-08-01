@@ -24,7 +24,7 @@ const PopoverMenuItem = styled(Box)`
 
 function PopoverItemSmart({item, ...props}) {
   const handleClick = e => {
-    item.HandleClick('smart')
+    item.HandleClick('smart'+item.name)
   }
   return (
     <PopoverMenuItem onClick={handleClick} {...props}>

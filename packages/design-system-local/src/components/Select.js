@@ -68,7 +68,7 @@ const customStyles = {
 		if (isFocused || menuIsOpen) {
 			return {
 				...base,
-				borderColor: systemTheme.colors.input.focus,
+				borderColor: systemTheme.colors.primary,
 				backgroundColor: systemTheme.colors.white,
 				boxShadow: 'none'
 			}
@@ -77,7 +77,7 @@ const customStyles = {
 		return {
 			...base,
 			'&:hover': {
-				borderColor: systemTheme.colors.black
+				borderColor: systemTheme.colors.primary
 			},
 			borderColor: 'transparent',
 			backgroundColor: systemTheme.colors.lightGrey

@@ -56,7 +56,7 @@ const HTMLInput = styled.input`
   transition: all ${props => props.theme.duration.fast};
   width:${props => props.shrinkWidth + 'px'};
   :hover {
-    border-color: ${themeGet('colors.black', '#3a3a3a')}
+    border-color: ${themeGet('colors.primary', '#3a3a3a')}
   } 
   :focus {
     outline: none;
