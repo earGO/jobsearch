@@ -1,12 +1,12 @@
 export {
 	projectCard,
 	nsi,
-	lk,
 	TopNav,
 	Login,
 	request,
 	oshs,
-	LocalNavigation
+	LocalNavigation,
+	ProjectManager
 } from '@ursip-box-front/modules'
 export {
 	Loading,

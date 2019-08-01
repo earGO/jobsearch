@@ -52,7 +52,7 @@ export {
 export {
 	projectCardService,
 	nsi,
-	lk,
+	projectManager,
 	topNavigation,
 	mocks,
 	oshs,

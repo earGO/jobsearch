@@ -1,18 +1,18 @@
 import React, {useRef, useState} from 'react'
-import {Box, Flex, Scrollbars, lk, projectCard,LocalNavigation} from '../import'
-import LazyLk from '../LazyLoad/LK'
+import {Box, Flex, Scrollbars, ProjectManager, LocalNavigation} from '../import'
+import ProjectManagerLazy from '../LazyLoad/ProjectManagerLazy'
 import ProjectCard from '../LazyLoad/ProjectCard'
 import {useSelector} from 'react-redux'
 
-function ProjectManager({history, ...props}) {
+function ProjectManagerCompound({history, ...props}) {
 	/* Create reference to scrollbars to invoke local methods */
 	const scrollBarsRef = useRef(null)
 	const onUpButtonClick = () => {
 		/* Invoke local method of scrollbars to scroll to top */
 		scrollBarsRef.current.scrollToTop()
 	}
-	const projectSelected = useSelector(lk.selectors.projectSelected) // Catch the action of project selection
-	const projectId = useSelector(lk.selectors.selectedProjectId) // Catch selected project ID
+	const projectSelected = useSelector(ProjectManager.selectors.projectSelected) // Catch the action of project selection
+	const projectId = useSelector(ProjectManager.selectors.selectedProjectId) // Catch selected project ID
 
 	/* if user clicked on a project from table - load projectCard component with projectId in it
 	 * else  load personal-page */
@@ -20,7 +20,7 @@ function ProjectManager({history, ...props}) {
 		if (projectSelected) {
 			return <ProjectCard projectId={projectId} />
 		} else {
-			return <LazyLk history={history} />
+			return <ProjectManagerLazy history={history} />
 		}
 	}
 
@@ -41,4 +41,4 @@ function ProjectManager({history, ...props}) {
 	)
 }
 
-export default ProjectManager
+export default ProjectManagerCompound

@@ -1,5 +1,5 @@
 import {namespace} from './types'
-import {lk as service} from '../../../import'
+import {projectManager as service} from '../../../import'
 import reducers, {initialState} from './reducers'
 
 import sagas from './sagas'
