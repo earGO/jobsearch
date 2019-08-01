@@ -2,7 +2,7 @@ import {requestsReducer} from 'redux-saga-requests'
 
 const name = '@bim-service-main-nav'
 
-const api = 'http://localhost:3421/main_nav'
+const api = 'http://192.168.5.90:3421/main_nav'
 
 /* Types */
 

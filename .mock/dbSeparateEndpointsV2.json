@@ -1713,36 +1713,33 @@
       "id": "oshs",
       "value": "ОШС"
     }
-  ,
-    {
-      "id": "nsi",
-      "value": "НСИ"
-    }
+
   ],
   "personal_nav": [
-    {
-      "id": "All",
-      "value": "Все стадии"
-    },
-    {
-      "id": "OBIN",
-      "value": "ОБИН"
-    },
-    {
-      "id": "PROJECTING",
-      "value": "Проектирование"
-    },
-    {
-      "id": "SMR",
-      "value": "Строительство"
-    },
-    {
-      "id": "OPER",
-      "value": "Эксплуатация"
-    },
-    {
-      "id": "SNOS",
-      "value": "Снос"
-    }
-  ]
+      {
+        "id": "All",
+        "value": "Все стадии"
+      },
+      {
+        "id": "OBIN",
+        "value": "ОБИН"
+      },
+      {
+        "id": "PROJECTING",
+        "value": "Проектирование"
+      },
+      {
+        "id": "SMR",
+        "value": "Строительство"
+      },
+      {
+        "id": "OPER",
+        "value": "Эксплуатация"
+      },
+      {
+        "id": "SNOS",
+        "value": "Снос"
+      }
+    ]
+
 }

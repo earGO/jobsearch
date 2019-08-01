@@ -16,7 +16,7 @@
     "clean": "oao clean",
     "status": "oao status",
     "remove-all": "oao remove-all",
-    "mock-api": "cd .mock && json-server dbSeparateEndpointsV2.json --watch --port 3421",
+    "mock-api": "cd .mock && json-server dbSeparateEndpointsV2.json --watch --port 3421 -H 192.168.5.90",
     "build-bim": "cd packages/apps/box-frontend && yarn build"
   },
   "workspaces": {

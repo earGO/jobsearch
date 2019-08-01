@@ -1,8 +1,8 @@
 import {requestsReducer} from 'redux-saga-requests';
 
 const name = '@bim-service-lk';
-
-const api = 'http://localhost:3421/projects';
+/* Using global port to give access to PMs and others and stuff */
+const api = 'http://192.168.5.90:3421/projects';
 
 /* Types */
 
