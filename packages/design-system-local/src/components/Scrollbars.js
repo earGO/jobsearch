@@ -14,9 +14,9 @@ const EnhancedScrollbars = styled(ReactCustomScrollbars)`
  * Добавляет вертикальный и горизинтальный скроллбар для блока.
  * Обеспечивает единое отоборажение скорллбара во всех баузерах и операционных системах.
  */
-function Scrollbars(props) {
-	return <EnhancedScrollbars {...props} />
-}
+const Scrollbars = React.forwardRef((props, ref) => {
+	return <EnhancedScrollbars ref={ref} {...props} />
+})
 
 Scrollbars.propTypes = {
 	onScroll: PropTypes.func,

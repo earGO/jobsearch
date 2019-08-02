@@ -3,7 +3,6 @@ import {
 	TableContentBox,
 	ContentBox,
 	AnimatedSearchInput,
-	FlexContainerBottomDivider,
 	RangeDatePicker,
 	Box,
 	Select,
@@ -22,6 +21,15 @@ import {useDispatch} from 'react-redux'
 
 const Corrector = styled(TableContentBox)`
 	z-index: 12;
+`
+
+const NonCollapseContainer = styled(Flex)`
+	position: absolute;
+	z-index: 13;
+`
+
+const CollapseContentContainer = styled(ContentBox)`
+	z-index: 14;
 `
 
 function SearchAndFilter({
@@ -69,70 +77,98 @@ function SearchAndFilter({
 		return (
 			<Corrector>
 				<ContentBox flexDirection={'column'}>
-					<FlexContainerBottomDivider flexDirection={'row'}>
-						<Box p={3}>
-							<AnimatedSearchInput
-								value={searchQuery}
-								onSearch={handleSearch}
-								placeholder="Поиск"
-								shrinkWidth={80}
-								growWidth={160}
-							/>
-						</Box>
-						<Box p={3} pl={0}>
-							<Heading>Проекты ({amnt})</Heading>
-						</Box>
-					</FlexContainerBottomDivider>
-					<Flex flexFlow={'row nowrap'} pt={1}>
-						<Box p={2} id={'sortTypePickerGroup'}>
-							<Box pl={1}>
-								<Text fontSize={'12px'} color="grey">
-									Сортировка
-								</Text>
-							</Box>
-							<Box width={160} p={1}>
-								<Select
-									value={value}
-									onChange={onChange}
-									options={options}
-									size="medium"
+					<Flex
+						flexDirection={'row'}
+						justifyContent={'space-between'}
+					>
+						<NonCollapseContainer>
+							<Box p={3}>
+								<AnimatedSearchInput
+									value={searchQuery}
+									onSearch={handleSearch}
+									placeholder="Поиск"
+									shrinkWidth={80}
+									growWidth={160}
 								/>
 							</Box>
-						</Box>
-						<Box p={2} pl={0} id={'datePickerGroup'}>
-							<Box pl={1}>
-								<Text fontSize={'12px'} color="grey">
-									Дата подачи от и до
-								</Text>
+							<Box p={3} pl={0}>
+								<Heading>Проекты ({amnt})</Heading>
 							</Box>
-							<Box width={292} p={1}>
-								<RangeDatePicker
-									onChange={handleDatesPick}
-									height={42}
-								/>
-							</Box>
-						</Box>
-						<Relative
-							p={2}
-							pl={0}
-							id={'functionPickerGroup'}
-							left={-90}
-						>
-							<Box pl={0}>
-								<Text fontSize={'12px'} color="grey">
-									Функциональное значение
-								</Text>
-							</Box>
-							<Box width={160} p={1}>
-								<Select
-									onChange={onFunctionalChange}
-									options={functionOptions}
-									size="medium"
-									placeholder={'Выбрать'}
-								/>
-							</Box>
-						</Relative>
+							<Box width={630}>{''}</Box>
+						</NonCollapseContainer>
+						<Collapse>
+							<Collapse.Panel
+								key="key1"
+								title="Расширенный поиск"
+								titleAlignment={'flex-end'}
+								pt={2}
+								pb={1}
+							>
+								<CollapseContentContainer
+									flexFlow={'row nowrap'}
+								>
+									<Box p={2} id={'sortTypePickerGroup'}>
+										<Box pl={1}>
+											<Text
+												fontSize={'12px'}
+												color="grey"
+											>
+												Сортировка
+											</Text>
+										</Box>
+										<Box width={160} p={1}>
+											<Select
+												value={value}
+												onChange={onChange}
+												options={options}
+												size="medium"
+											/>
+										</Box>
+									</Box>
+									<Box p={2} pl={0} id={'datePickerGroup'}>
+										<Box pl={1}>
+											<Text
+												fontSize={'12px'}
+												color="grey"
+											>
+												Дата подачи от и до
+											</Text>
+										</Box>
+										<Box width={292} p={1}>
+											<RangeDatePicker
+												onChange={handleDatesPick}
+												height={42}
+											/>
+										</Box>
+									</Box>
+									<Relative
+										p={2}
+										pl={0}
+										id={'functionPickerGroup'}
+										left={-90}
+									>
+										<Box pl={0}>
+											<Text
+												fontSize={'12px'}
+												color="grey"
+											>
+												Функциональное значение
+											</Text>
+										</Box>
+										<Box width={160} p={1}>
+											<Select
+												onChange={onFunctionalChange}
+												options={functionOptions}
+												size="medium"
+												placeholder={'Выбрать'}
+											/>
+										</Box>
+									</Relative>
+								</CollapseContentContainer>
+							</Collapse.Panel>
+						</Collapse>
 					</Flex>
+
 					<ContentBox
 						flexDirection={'row'}
 						justifyContent={'flex-end'}

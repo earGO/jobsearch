@@ -2,6 +2,7 @@ import React from 'react'
 import propTypes from 'prop-types'
 import styled, {css} from 'styled-components'
 import Box from './Box'
+import Relative from './Relative'
 import Flex from './Flex'
 import Icon from './Icon'
 import themeGet from '@styled-system/theme-get'
@@ -20,12 +21,12 @@ const disabled = props => {
 
 const PanelContent = styled(Box)`
 	${props => `transition: height ${props.theme.duration.normal};`}
-	overflow: hidden;
 `
 
 // To fix warning because of passing isOpen prop to <svg />
-const AnimatedScaledIcon = styled(Box)`
-	font-size: 10px;
+const AnimatedScaledIcon = styled(Relative)`
+	top: 3px;
+	transform-origin: 8px 8px;
 	color: ${themeGet('color.black', '#080808')};
 	transition: transform ${themeGet('duration.normal', '300ms')};
 	${props => props.isOpen && `transform: rotate(180deg);`}
@@ -33,16 +34,16 @@ const AnimatedScaledIcon = styled(Box)`
 
 const PanelHeaderWrapper = styled(Flex)`
 	justify-content: ${props => props.titleAlignment};
-	height: 32px;
+	height: 63px;
 	align-items: center;
 	border-bottom: 1px solid ${themeGet('colors.border', '#ecebeb')};
-	${props => (props.disabled ? 'cursor: not-allowed;' : 'cursor: pointer;')}
+	${props => (props.disabled ? 'cursor: not-allowed;' : 'cursor: pointer;')};
 `
 
 const PanelWrapper = styled(Flex)`
-	overflow: hidden;
 	font-size: ${props => props.theme.fontSizes[1] + 'px'};
 	color: ${props => props.theme.colors.black};
+	${props => !props.isOpen && `overflow: hidden;`}
 	${disabled}
 `
 
@@ -67,15 +68,15 @@ const PanelHeader = ({
 		>
 			{isOpen ? (
 				<AnimatedScaledIcon isOpen={isOpen}>
-					<Icon name={'keyboard_arrow_down'} size={24} />
+					<Icon name={'keyboard_arrow_up'} size={16} />
 				</AnimatedScaledIcon>
 			) : (
 				<AnimatedScaledIcon isOpen={isOpen}>
-					<Icon name={'keyboard_arrow_up'} size={24} />
+					<Icon name={'keyboard_arrow_down'} size={16} />
 				</AnimatedScaledIcon>
 			)}
 		</Flex>
-		<Box ml={2} id={title + '-id'}>
+		<Box id={title + '-id'} pr={3}>
 			{title}
 		</Box>
 	</PanelHeaderWrapper>
@@ -111,7 +112,11 @@ class CollapsePanel extends React.Component {
 			height: this.props.isOpen ? this.state.contentHeight : 0
 		}
 		return (
-			<PanelWrapper flexDirection="column" disabled={this.props.disabled}>
+			<PanelWrapper
+				flexDirection="column"
+				disabled={this.props.disabled}
+				isOpen={this.props.isOpen}
+			>
 				<PanelHeader
 					titleAlignment={this.props.titleAlignment}
 					{...this.props}

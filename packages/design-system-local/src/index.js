@@ -34,7 +34,7 @@ export {
 	default as FlexContainerBottomDivider
 } from './components/FlexContainerBottomDivider'
 
-export {default as Scrollbars} from './components/ControllableScrollbars/index'
+export {default as Scrollbars} from './components/Scrollbars'
 
 /* Blocks export */
 export {default as DropdownMenu} from './blocks/DropdownMenu'
