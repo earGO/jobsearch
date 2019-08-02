@@ -114,7 +114,6 @@ function LK({history, ...props}) {
 
 	/* When dates removed from datepicker - remove filtering from table data */
 	const handleDateFilterChange = (startDate, endDate, criteria) => {
-		console.log(startDate)
 		if (startDate && endDate) {
 			setFilterStartDate(startDate.toDate().getTime())
 			setFilterEndDate(endDate.toDate().getTime())
@@ -131,6 +130,17 @@ function LK({history, ...props}) {
 		filteredOnDates,
 		localOption
 	)
+
+	const handleClearAllFilters = projectsSortCriteria => {
+		/* Clear selected dates and show unfiltered list*/
+		handleDateFilterChange(null, null, null)
+		/* Sorts full list on passed criteria */
+		console.log(
+			'criteria passed to ClearAllFilters is:',
+			projectsSortCriteria
+		)
+		handleProjectsSort(projectsSortCriteria)
+	}
 
 	return (
 		<DynamicModuleLoader modules={[module.default]}>
@@ -178,6 +188,7 @@ function LK({history, ...props}) {
 							amnt={allFilteredData.length}
 							handleProjectsSort={handleProjectsSort}
 							handleDateFilterChange={handleDateFilterChange}
+							handleClearAllFilters={handleClearAllFilters}
 						/>
 						{/* A table with all fetched projects data , filtered
 						with selectors and functions above */}

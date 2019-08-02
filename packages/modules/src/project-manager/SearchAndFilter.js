@@ -36,6 +36,7 @@ function SearchAndFilter({
 	amnt,
 	handleProjectsSort,
 	handleDateFilterChange,
+	handleClearAllFilters,
 	...props
 }) {
 	const dispatch = useDispatch()
@@ -55,7 +56,8 @@ function SearchAndFilter({
 	]
 
 	/* A state to handle filter selector */
-	const [value, setOption] = useState(options[4])
+	const [value, setOption] = useState(null)
+	const [functionalValue, setFunctionalValue] = useState(null)
 
 	const searchQuery = ''
 
@@ -63,7 +65,9 @@ function SearchAndFilter({
 		setOption(newOption)
 		handleProjectsSort(newOption.value)
 	}
-	const onFunctionalChange = newOption => {}
+	const onFunctionalChange = newOption => {
+		setFunctionalValue(newOption)
+	}
 
 	const handleSearch = debounce(200, query =>
 		dispatch(actions.searchCatalogs(query))
@@ -157,6 +161,7 @@ function SearchAndFilter({
 										</Box>
 										<Box width={160} p={1}>
 											<Select
+												value={functionalValue}
 												onChange={onFunctionalChange}
 												options={functionOptions}
 												size="medium"
@@ -180,7 +185,9 @@ function SearchAndFilter({
 								type={'flat'}
 								color={'primary'}
 								onClick={() => {
-									handleDateFilterChange(null, null, null)
+									setOption(null)
+									setFunctionalValue(null)
+									handleClearAllFilters(options[1].value)
 								}}
 							>
 								Сбросить фильтры
