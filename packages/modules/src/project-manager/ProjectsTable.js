@@ -1,35 +1,43 @@
 import React from 'react'
-import {Table, Flex, Box, Button, theme,DropdownMenu,Icon,TableContentBox} from '../../import'
+import {
+	Table,
+	Flex,
+	Box,
+	Button,
+	theme,
+	DropdownMenu,
+	Icon,
+	TableContentBox
+} from '../../import'
 import styled from 'styled-components'
 
 const ProjectButton = styled(Button)`
 	transition: all;
-	transition-duration: ${props=>props.theme.duration.fast};
-	transition-timing-function: ${props=>props.theme.timingFunctions.easeInOut};
+	transition-duration: ${props => props.theme.duration.fast};
+	transition-timing-function: ${props =>
+		props.theme.timingFunctions.easeInOut};
 	&:hover {
-			color:${props=>props.theme.colors.primary};
+		color: ${props => props.theme.colors.primary};
 		transform: scale(1.05);
 	}
 `
 
 const ActionHover = styled(Box)`
 	transition: all;
-	transition-duration: ${props=>props.theme.duration.fast};
-	transition-timing-function: ${props=>props.theme.timingFunctions.easeInOut};
+	transition-duration: ${props => props.theme.duration.fast};
+	transition-timing-function: ${props =>
+		props.theme.timingFunctions.easeInOut};
 	cursor: pointer;
-	i{
-		color:black;
+	i {
+		color: black;
 	}
-	:hover {	
-	i{
-		color:${props=>props.theme.colors.primary};
-		transform: scale(1.15);
+	:hover {
+		i {
+			color: ${props => props.theme.colors.primary};
+			transform: scale(1.15);
+		}
 	}
-	}
-
 `
-
-
 
 /* Here's where I'll render the progress svg based on passed progress data */
 const ProgressCell = ({rowData, dataKey, ...props}) => (
@@ -51,13 +59,13 @@ const ActionCell = ({rowData, dataKey, ...props}) => {
 		},
 		{
 			name: 'Доступ',
-			HandleClick: ()=> {
+			HandleClick: () => {
 				console.log('clicked ' + dataKey)
 			}
 		},
 		{
 			name: 'Редактировать',
-			HandleClick: ()=> {
+			HandleClick: () => {
 				console.log('clicked ' + dataKey)
 			}
 		}
@@ -67,9 +75,7 @@ const ActionCell = ({rowData, dataKey, ...props}) => {
 			<Flex justifyContent={'center'} width={96}>
 				<ActionHover>
 					<DropdownMenu content={FunctionalContent} shiftLeft={-80}>
-						<Icon
-							name={'more_horiz'}
-						/>
+						<Icon name={'more_horiz'} />
 					</DropdownMenu>
 				</ActionHover>
 			</Flex>

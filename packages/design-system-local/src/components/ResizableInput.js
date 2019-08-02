@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
-import styled, {css} from 'styled-components';
-import propTypes from 'prop-types';
-import {space} from 'styled-system';
+import React, {Component} from 'react'
+import styled, {css} from 'styled-components'
+import propTypes from 'prop-types'
+import {space} from 'styled-system'
 import themeGet from '@styled-system/theme-get'
-import Absolute from './Absolute';
-import  Relative from './Relative'
-import _ , {omit} from 'lodash'
-
+import Absolute from './Absolute'
+import Relative from './Relative'
+import omit from 'lodash/omit'
 
 // #TBD: Input.TextArea + allowClear prop. Как будет работать c suffix?
 
@@ -17,14 +16,14 @@ const propsToOmit = [
 	'value',
 	'wrapperStyle',
 	'onChange'
-];
+]
 
 const disabled = props =>
 	props.disabled &&
 	css`
 		background: ${themeGet('colors.input.disabled', '#b5b5b5')};
 		cursor: not-allowed;
-	`;
+	`
 
 const size = ({size = 'medium', theme}) => {
 	const sizes = {
@@ -41,11 +40,11 @@ const size = ({size = 'medium', theme}) => {
 			fontSize: theme.fontSizes[2],
 			height: 48
 		}
-	};
-	return sizes[size];
-};
+	}
+	return sizes[size]
+}
 
-const inline = ({inline}) => Boolean(inline) && {display: 'inline-block'};
+const inline = ({inline}) => Boolean(inline) && {display: 'inline-block'}
 
 const HTMLInput = styled.input`
   font-family: ${themeGet('font.main', "'PT Sans'")};
@@ -70,58 +69,58 @@ const HTMLInput = styled.input`
   ${size}
   ${disabled}
   ${inline};
-`;
+`
 
 export const InputWrapper = styled(Relative)({
 	display: 'flex',
 	flexGrow: 1,
 	alignItems: 'center'
-});
+})
 
 const Adornment = styled(Absolute)({
 	display: 'flex'
-});
+})
 
 /** Получение данных от пользователя.*/
 class ResizableInput extends Component {
 	constructor(props) {
-		super(props);
+		super(props)
 		this.state = {
 			value:
 				typeof props.value !== 'undefined'
 					? props.defaultValue
 					: props.value
-		};
+		}
 	}
 
 	static getDerivedStateFromProps(nextProps) {
 		if ('value' in nextProps) {
 			return {
 				value: nextProps.value
-			};
+			}
 		}
-		return null;
+		return null
 	}
 
 	handleChange = event => {
-		const newValue = event.target.value;
+		const newValue = event.target.value
 		this.setState({
 			value: newValue
-		});
-		this.props.onChange && this.props.onChange(newValue, event);
-	};
+		})
+		this.props.onChange && this.props.onChange(newValue, event)
+	}
 
 	saveInput = node => {
-		this.input = node;
-	};
+		this.input = node
+	}
 
 	focus = () => {
-		this.input.focus();
-	};
+		this.input.focus()
+	}
 
 	blur = () => {
-		this.input.blur();
-	};
+		this.input.blur()
+	}
 
 	render() {
 		const {
@@ -131,7 +130,7 @@ class ResizableInput extends Component {
 			wrapperStyle,
 			shrinkWidth,
 			growWidth
-		} = this.props;
+		} = this.props
 		return (
 			<InputWrapper width={width} style={wrapperStyle}>
 				{prefix && (
@@ -156,7 +155,7 @@ class ResizableInput extends Component {
 					</Adornment>
 				)}
 			</InputWrapper>
-		);
+		)
 	}
 }
 
@@ -175,13 +174,13 @@ ResizableInput.propTypes = {
 	size: propTypes.oneOf(['small', 'medium', 'large']),
 	/** Стили враппера */
 	wrapperStyle: propTypes.object
-};
+}
 
 ResizableInput.defaultProps = {
 	size: 'medium'
-};
+}
 
-ResizableInput.displayName = 'ResizableInput';
+ResizableInput.displayName = 'ResizableInput'
 
 /** @component */
-export default ResizableInput;
+export default ResizableInput

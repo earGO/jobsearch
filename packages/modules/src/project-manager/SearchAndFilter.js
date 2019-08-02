@@ -4,9 +4,16 @@ import {
 	ContentBox,
 	AnimatedSearchInput,
 	FlexContainerBottomDivider,
-	RangeDatePicker
+	RangeDatePicker,
+	Box,
+	Select,
+	Heading,
+	Text,
+	Flex,
+	Relative,
+	Button,
+	Collapse
 } from '../../import'
-import {Box, Select, Heading, Text, Flex, Relative, Button} from '../../import'
 
 import styled from 'styled-components'
 import {debounce} from 'throttle-debounce'
@@ -54,8 +61,8 @@ function SearchAndFilter({
 		dispatch(actions.searchCatalogs(query))
 	)
 
-	const handleDatesPick = (dates, dateStrings) =>{
-		handleDateFilterChange(dates[0],dates[1],'dateCreated')
+	const handleDatesPick = (dates, dateStrings) => {
+		handleDateFilterChange(dates[0], dates[1], 'dateCreated')
 	}
 
 	if (props !== undefined) {

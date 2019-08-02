@@ -30,7 +30,9 @@ export {default as Popover} from './components/Popover'
 export {default as Select} from './components/Select'
 export {default as Modal} from './components/Modal'
 export {default as ResizableInput} from './components/ResizableInput'
-export {default as FlexContainerBottomDivider} from './components/FlexContainerBottomDivider'
+export {
+	default as FlexContainerBottomDivider
+} from './components/FlexContainerBottomDivider'
 
 export {default as Scrollbars} from './components/ControllableScrollbars/index'
 
@@ -38,6 +40,8 @@ export {default as Scrollbars} from './components/ControllableScrollbars/index'
 export {default as DropdownMenu} from './blocks/DropdownMenu'
 export {default as Hint} from './blocks/Hint'
 export {default as LabeledIconButton} from './blocks/LabeledIconButton'
+export {default as SearchInput} from './blocks/SearchInput'
+export {default as AnimatedSearchInput} from './blocks/AnimatedSearchInput'
 
 /* Modules export */
 export {default as RangeDatePicker} from './modules/RangeDatePicker'

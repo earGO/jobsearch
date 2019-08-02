@@ -28,7 +28,7 @@ const Wrapper = styled(Flex)`
   }
     .ant-calendar-picker-icon {
     position: absolute;
-    top:${props => props.height/2+1 + 'px'};!important;
+    top:${props => props.height / 2 + 1 + 'px'};!important;
     left:${props => props.width - 20 + 'px'};!important; 
     color:black;   
   }
@@ -38,7 +38,7 @@ const Wrapper = styled(Flex)`
   }
   .ant-calendar-picker-clear{
     position: absolute;
-    top:${props => props.height/2+1 + 'px'};!important;
+    top:${props => props.height / 2 + 1 + 'px'};!important;
     left:${props => props.width - 20 + 'px'};!important;    
     transform: scale(1.05);
   }
@@ -57,61 +57,61 @@ const Wrapper = styled(Flex)`
 `
 
 const IconCorrector = styled(Box)`
-  margin-left: 2px;
+	margin-left: 2px;
 `
 
 moment.locale('ru')
 
 function RangeDatePicker({
-  onChange,
-  id,
-  value,
-  dateFormat,
-  width,
-  height,
-  placeholder,
-  ...rest
+	onChange,
+	id,
+	value,
+	dateFormat,
+	width,
+	height,
+	placeholder,
+	...rest
 }) {
-  const datePickerRef = useRef(null)
+	const datePickerRef = useRef(null)
 
-  const handleChange = (dates, dateStrings) => {
-    onChange && onChange(dates, dateStrings)
-  }
+	const handleChange = (dates, dateStrings) => {
+		onChange && onChange(dates, dateStrings)
+	}
 
-  return (
-    <Wrapper width={width} height={height}>
-      <LocaleProvider locale={ru_RU}>
-        <RangePicker
-          ref={datePickerRef}
-          // required props
-          id={id} // momentPropTypes.momentObj or null
-          onChange={handleChange} // PropTypes.func.isRequired
-          format={dateFormat}
-          placeholder={placeholder}
-          separator={'-'}
-          {...rest}
-        />
-      </LocaleProvider>
-    </Wrapper>
-  )
+	return (
+		<Wrapper width={width} height={height}>
+			<LocaleProvider locale={ru_RU}>
+				<RangePicker
+					ref={datePickerRef}
+					// required props
+					id={id} // momentPropTypes.momentObj or null
+					onChange={handleChange} // PropTypes.func.isRequired
+					format={dateFormat}
+					placeholder={placeholder}
+					separator={'-'}
+					{...rest}
+				/>
+			</LocaleProvider>
+		</Wrapper>
+	)
 }
 RangeDatePicker.propTypes = {
-  id: PropTypes.string,
-  value: PropTypes.array,
-  onChange: PropTypes.func,
-  dateFormat: PropTypes.string,
-  width: PropTypes.number,
-  height: PropTypes.number,
-  placeholder: PropTypes.array
+	id: PropTypes.string,
+	value: PropTypes.array,
+	onChange: PropTypes.func,
+	dateFormat: PropTypes.string,
+	width: PropTypes.number,
+	height: PropTypes.number,
+	placeholder: PropTypes.array
 }
 
 RangeDatePicker.defaultProps = {
-  id: 'useSomeId',
-  value: [],
-  dateFormat: 'DD/MM/YYYY',
-  width: 192,
-  height: 40,
-  placeholder: ['дд/мм/гггг', 'дд/мм/гггг']
+	id: 'useSomeId',
+	value: [],
+	dateFormat: 'DD/MM/YYYY',
+	width: 192,
+	height: 40,
+	placeholder: ['дд/мм/гггг', 'дд/мм/гггг']
 }
 
 RangeDatePicker.displayName = 'RangeDatePicker'

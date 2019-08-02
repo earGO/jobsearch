@@ -9,72 +9,72 @@ import {DatePicker, LocaleProvider} from 'antd'
 import styled from 'styled-components'
 
 const Wrapper = styled(Box)`
-  input {
-    width: ${props => props.width + 'px'};
-    height: ${props => props.height + 'px'};
-  }
-  input:hover:not(:focus) {
-    border: 1px solid #0091ea !important;
-    background: #ffffff !important;
-  }
-  input:not(:focus) {
-    background: #f5f5f5 !important;
-  }
+	input {
+		width: ${props => props.width + 'px'};
+		height: ${props => props.height + 'px'};
+	}
+	input:hover:not(:focus) {
+		border: 1px solid #0091ea !important;
+		background: #ffffff !important;
+	}
+	input:not(:focus) {
+		background: #f5f5f5 !important;
+	}
 `
 
 moment.locale('ru')
 
 function SingleDatePicker({
-  onChange,
-  id,
-  value,
-  dateFormat,
-  width,
-  height,
-  placeholder,
-  ...rest
+	onChange,
+	id,
+	value,
+	dateFormat,
+	width,
+	height,
+	placeholder,
+	...rest
 }) {
-  const [localValue, setLocalValue] = useState(moment(new Date(), dateFormat))
+	const [localValue, setLocalValue] = useState(moment(new Date(), dateFormat))
 
-  const handleChange = newDate => {
-    setLocalValue(newDate)
-    onChange && onChange(newDate)
-  }
+	const handleChange = newDate => {
+		setLocalValue(newDate)
+		onChange && onChange(newDate)
+	}
 
-  return (
-    <Wrapper width={width} height={height}>
-      <LocaleProvider locale={ru_RU}>
-        <DatePicker
-          block // 100% ширины
-          // required props
-          id={id}
-          value={localValue} // momentPropTypes.momentObj or null
-          onChange={handleChange} // PropTypes.func.isRequired
-          format={dateFormat}
-          placeholder={placeholder}
-          {...rest}
-        />
-      </LocaleProvider>
-    </Wrapper>
-  )
+	return (
+		<Wrapper width={width} height={height}>
+			<LocaleProvider locale={ru_RU}>
+				<DatePicker
+					block // 100% ширины
+					// required props
+					id={id}
+					value={localValue} // momentPropTypes.momentObj or null
+					onChange={handleChange} // PropTypes.func.isRequired
+					format={dateFormat}
+					placeholder={placeholder}
+					{...rest}
+				/>
+			</LocaleProvider>
+		</Wrapper>
+	)
 }
 SingleDatePicker.propTypes = {
-  id: PropTypes.string,
-  value: PropTypes.array,
-  onChange: PropTypes.func.isRequired,
-  dateFormat: PropTypes.string,
-  width: PropTypes.number,
-  height: PropTypes.number,
-  placeholder: PropTypes.string
+	id: PropTypes.string,
+	value: PropTypes.array,
+	onChange: PropTypes.func.isRequired,
+	dateFormat: PropTypes.string,
+	width: PropTypes.number,
+	height: PropTypes.number,
+	placeholder: PropTypes.string
 }
 
 SingleDatePicker.defaultProps = {
-  id: 'useSomeId',
-  value: [],
-  dateFormat: 'DD/MM/YYYY',
-  width: 192,
-  height: 40,
-  placeholder: 'дд/мм/гггг'
+	id: 'useSomeId',
+	value: [],
+	dateFormat: 'DD/MM/YYYY',
+	width: 192,
+	height: 40,
+	placeholder: 'дд/мм/гггг'
 }
 
 SingleDatePicker.displayName = 'SingleDatePicker'

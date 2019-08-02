@@ -1,4 +1,4 @@
-import DropdownMenu from "@ursip-box-front/design-system-local/src/blocks/DropdownMenu";
+import DropdownMenu from '@ursip-box-front/design-system-local/src/blocks/DropdownMenu'
 
 export {
 	ContentBox,
@@ -10,10 +10,8 @@ export {
 	ResizableSide,
 	FormItem,
 	Modal,
-	SearchInput,
 	DropdownMenuButton,
 	TableContentBox,
-	AnimatedSearchInput,
 	Logo,
 	NotificationsCounter,
 	FormModal,
@@ -50,6 +48,8 @@ export {
 	Divider,
 	Checkbox,
 	RangeDatePicker,
+	SearchInput,
+	AnimatedSearchInput,
 	DropdownMenu
 } from '@ursip-box-front/design-system-local'
 

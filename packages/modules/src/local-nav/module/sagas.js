@@ -14,7 +14,5 @@ const preSelectTab = function*() {
 }
 
 export default function*() {
-	yield all([
-		takeLatest(success(service.types.LOAD_TABS), preSelectTab)
-	])
+	yield all([takeLatest(success(service.types.LOAD_TABS), preSelectTab)])
 }
