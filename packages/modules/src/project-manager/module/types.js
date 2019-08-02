@@ -1,4 +1,4 @@
-import {lk as service} from '../../../import'
+import {projectManager as service} from '../../../import'
 
 export const namespace = '@ursip-' + service.name
 

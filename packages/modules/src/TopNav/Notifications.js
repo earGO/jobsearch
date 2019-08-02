@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Button, Flex, Text,NotificationsCounter} from '../../import'
+import {Button, Flex, Text, NotificationsCounter} from '../../import'
 
 const Hoverer = styled(Flex)`
 	transition: all 0.15s ease-in;

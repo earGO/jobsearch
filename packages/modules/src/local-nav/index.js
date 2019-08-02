@@ -1,5 +1,5 @@
 import React from 'react'
-import * as personalNavigation from './module'
+import * as service from './module'
 import {useSelector, useDispatch} from 'react-redux'
 import {Box, ContentBox, Flex, Icon, Loading, Text} from '../../import'
 import styled from 'styled-components'
@@ -35,7 +35,7 @@ function LkNav({scrollTop, onUpButtonClick, ...props}) {
 	const notReady = loading && !(LkNavTabs !== undefined)
 
 	return (
-		<DynamicModuleLoader modules={[personalNavigation.default]}>
+		<DynamicModuleLoader modules={[service.default]}>
 			{notReady ? (
 				<Loading overlay>Загрузка навигации</Loading>
 			) : (
@@ -49,7 +49,7 @@ function LkNav({scrollTop, onUpButtonClick, ...props}) {
 							alignItems={'center'}
 							onClick={onUpButtonClick}
 						>
-							<Icon name={'arrow_upward'} size={1} />
+							<Icon name={'arrow_upward'} size={18} />
 							<Text fontSize={'12px'}>Наверх</Text>
 						</CustomButton>
 						<ModuleNavigationTabs

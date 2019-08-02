@@ -12,6 +12,7 @@
     "file-loader": "^4.0.0",
     "hex-rgb": "^4.1.0",
     "lodash": "^4.17.11",
+    "material-icons-react": "^1.0.4",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "raf": "^3.4.1",

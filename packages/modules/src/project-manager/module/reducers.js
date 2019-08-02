@@ -1,6 +1,6 @@
 import {success, error} from 'redux-saga-requests'
 
-import {lk as service} from '../../../import'
+import {projectManager as service} from '../../../import'
 import * as types from './types'
 
 const serviceTypes = service.types

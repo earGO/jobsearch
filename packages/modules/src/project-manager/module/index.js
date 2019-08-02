@@ -1,18 +1,20 @@
 import {namespace} from './types'
-import {personalNavigation} from '../../../import'
+import {projectManager as service} from '../../../import'
 import reducers, {initialState} from './reducers'
 
 import sagas from './sagas'
 
+export const baseRoute = '/lk'
+
 export default {
 	id: namespace,
 	reducerMap: {
-		[personalNavigation.name]: personalNavigation.reducer,
+		[service.name]: service.reducer,
 		[namespace]: (state = initialState, action) => ({
 			...state,
 			...(reducers[action.type] && reducers[action.type](state, action))
 		})
 	},
 	sagas: [sagas],
-	initialActions: [personalNavigation.actions.loadTabs()]
+	initialActions: [service.actions.loadProjects()]
 }

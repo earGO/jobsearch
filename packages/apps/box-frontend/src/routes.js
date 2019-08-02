@@ -5,13 +5,12 @@ import {Route, Switch} from 'react-router-dom'
 
 import {name as appName} from '../package.json'
 
-import {projectCard, Loading, NotFound, nsi, lk, Login, oshs} from './import'
+import {projectCard, Loading, NotFound, nsi, Login, oshs} from './import'
 import {Layout} from './Layout'
 import PrivateRoute from './PrivateRoute'
 
 const projectCardRoute = projectCard.baseRoute
 const nsiModuleRoute = nsi.baseRoute
-const lkModuleRoute = lk.baseRoute
 const loginModuleRoute = Login.baseRoute
 const oshsModuleRoute = oshs.baseRoute
 
@@ -26,19 +25,13 @@ const routes = [
 		path: '/',
 		exact: true,
 		private: true,
-		component: React.lazy(() => import('./Compound/LK'))
+		component: React.lazy(() => import('./Compound/ProjectManagerCompound'))
 	},
 	{
 		key: 'backendMain',
 		path: '/main',
 		private: true,
-		component: React.lazy(() => import('./Compound/LK'))
-	},
-	{
-		key: 'lk',
-		path: lkModuleRoute,
-		private: true,
-		component: React.lazy(() => import('./LazyLoad/LK'))
+		component: React.lazy(() => import('./Compound/ProjectManagerCompound'))
 	},
 
 	{

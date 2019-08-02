@@ -1,20 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import {Input, Icon, Box} from '../../import'
+import {Input, Icon, Box} from '../index'
 
-const ClearButton = styled(Icon)`
+const IconButton = styled(Box)`
 	cursor: pointer;
 	opacity: 0.7;
 	&:hover {
 		opacity: 1;
 	}
 `
-const SearchIcon = styled(Icon)`
-	opacity: 0.7;
-`
 
 function SearchInput({onChange, onSearch, placeholder, ...props}) {
+	/**
+	 * Компонент с иконкой поиска и очистки поля запроса.
+	 * Доступ к содержимому поля запроса через проп value
+	 * Дополнение функции управления нажатием на иконку поиска - проп onSearch
+	 * Дополнение функции управления поиском по мере введения запрсоа - проп onChange
+	 * */
 	const [value, setValue] = React.useState('')
 	const handleChange = value => {
 		setValue(value)
@@ -28,9 +31,20 @@ function SearchInput({onChange, onSearch, placeholder, ...props}) {
 		onSearch && typeof onSearch === 'function' && onSearch('')
 	}
 
-	const prefix = <Icon name="search" />
+	const handleSearch = value => {
+		onSearch && typeof onSearch === 'function' && onSearch(value)
+	}
+
+	const prefix = (
+		<IconButton onClick={handleSearch} pt={1}>
+			{' '}
+			<Icon name="search" />
+		</IconButton>
+	)
 	const suffix = (
-		<ClearButton name="times" fontSize={0} onClick={handleClear} />
+		<IconButton onClick={handleClear} pt={1}>
+			<Icon name="close" />
+		</IconButton>
 	)
 
 	return (

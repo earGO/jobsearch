@@ -3,7 +3,7 @@ import {createSelector} from 'reselect'
 import {namespace} from './types'
 import {initialState} from './reducers'
 
-import {lk as service, personalNavigation} from '../../../import'
+import {projectManager as service} from '../../../import'
 import {LocalNavigation, globalNavigation} from '../../../localIntegration'
 
 const namespaceStateSelector = state => state[namespace] || initialState

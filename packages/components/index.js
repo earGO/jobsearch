@@ -18,7 +18,6 @@ export {default as FormItem} from './src/common/FormItem'
 export {default as Modal} from './src/common/Modal'
 export {default as SearchInput} from './src/common/SearchInput'
 export {default as DropdownMenuButton} from './src/common/DropdownMenuButton'
-export {default as AnimatedSearchInput} from './src/common/AnimatedSearchInput'
 export {default as Main} from './src/main'
 
 export {default as FormModal} from './src/OSHS/FormModal'

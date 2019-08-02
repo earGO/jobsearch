@@ -1,6 +1,6 @@
 import {requestsReducer} from 'redux-saga-requests'
 
-const name = '@bim-service-personal_nav'
+const name = '@bim-service-local-navigation'
 
 const api = 'http://192.168.5.90:3421/personal_nav'
 

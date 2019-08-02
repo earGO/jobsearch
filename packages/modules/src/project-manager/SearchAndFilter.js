@@ -3,10 +3,17 @@ import {
 	TableContentBox,
 	ContentBox,
 	AnimatedSearchInput,
-	FlexContainerBottomDivider
+	FlexContainerBottomDivider,
+	RangeDatePicker,
+	Box,
+	Select,
+	Heading,
+	Text,
+	Flex,
+	Relative,
+	Button,
+	Collapse
 } from '../../import'
-import {Box, Select, Heading, Text, Flex, Relative, Button} from '../../import'
-import DatePicker from './DatePickerRange'
 
 import styled from 'styled-components'
 import {debounce} from 'throttle-debounce'
@@ -54,6 +61,10 @@ function SearchAndFilter({
 		dispatch(actions.searchCatalogs(query))
 	)
 
+	const handleDatesPick = (dates, dateStrings) => {
+		handleDateFilterChange(dates[0], dates[1], 'dateCreated')
+	}
+
 	if (props !== undefined) {
 		return (
 			<Corrector>
@@ -95,10 +106,9 @@ function SearchAndFilter({
 								</Text>
 							</Box>
 							<Box width={292} p={1}>
-								<DatePicker
-									handleDateFilterChange={
-										handleDateFilterChange
-									}
+								<RangeDatePicker
+									onChange={handleDatesPick}
+									height={42}
 								/>
 							</Box>
 						</Box>
@@ -106,9 +116,9 @@ function SearchAndFilter({
 							p={2}
 							pl={0}
 							id={'functionPickerGroup'}
-							left={-70}
+							left={-90}
 						>
-							<Box pl={1}>
+							<Box pl={0}>
 								<Text fontSize={'12px'} color="grey">
 									Функциональное значение
 								</Text>

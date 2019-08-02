@@ -1,3 +1,5 @@
+import DropdownMenu from '@ursip-box-front/design-system-local/src/blocks/DropdownMenu'
+
 export {
 	ContentBox,
 	Loading,
@@ -8,10 +10,8 @@ export {
 	ResizableSide,
 	FormItem,
 	Modal,
-	SearchInput,
 	DropdownMenuButton,
 	TableContentBox,
-	AnimatedSearchInput,
 	Logo,
 	NotificationsCounter,
 	FormModal,
@@ -46,18 +46,22 @@ export {
 	Absolute,
 	Scrollbars,
 	Divider,
-	Checkbox
+	Checkbox,
+	RangeDatePicker,
+	SearchInput,
+	AnimatedSearchInput,
+	DropdownMenu
 } from '@ursip-box-front/design-system-local'
 
 export {
 	projectCardService,
 	nsi,
-	lk,
+	projectManager,
 	topNavigation,
-	personalNavigation,
 	mocks,
 	oshs,
-	auth
+	auth,
+	localNavigation
 } from '@ursip-box-front/services'
 
 export {arrayToTree, formatDate, storageUtils} from '@ursip-box-front/utils'
