@@ -67,7 +67,7 @@ describe('Test projectCard service actions', () => {
 	test('Dispatches the correct action and payload', () => {
 		const expectedActions = [
 			{
-				payload: {request: {url: 'http://localhost:3000/project/'}},
+				payload: {request: {url: 'http://192.168.5.90:3421/project/'}},
 				type: 'project-card/LOAD_PROJECT'
 			}
 		]
