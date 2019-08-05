@@ -46,8 +46,6 @@ function SingleDatePicker({
 			<LocaleProvider locale={ru_RU}>
 				<DatePicker
 					block // 100% ширины
-					// required props
-					id={id}
 					value={localValue} // momentPropTypes.momentObj or null
 					onChange={handleChange} // PropTypes.func.isRequired
 					format={dateFormat}
@@ -59,7 +57,6 @@ function SingleDatePicker({
 	)
 }
 SingleDatePicker.propTypes = {
-	id: PropTypes.string,
 	value: PropTypes.array,
 	onChange: PropTypes.func.isRequired,
 	dateFormat: PropTypes.string,
@@ -69,7 +66,6 @@ SingleDatePicker.propTypes = {
 }
 
 SingleDatePicker.defaultProps = {
-	id: 'useSomeId',
 	value: [],
 	dateFormat: 'DD/MM/YYYY',
 	width: 192,

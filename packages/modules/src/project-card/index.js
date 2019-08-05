@@ -10,7 +10,7 @@ import Sections from './Sections'
 import Fields from './Fields'
 import {ContentBox, Loading} from '../../import'
 
-function ProjectCard({...props}) {
+function ProjectCard({history, ...props}) {
 	const loading = useSelector(selectors.projectLoading)
 	const projectData = useSelector(selectors.projectSelector)
 	const projectTitle = useSelector(selectors.projectTitleSelector)
@@ -34,7 +34,7 @@ function ProjectCard({...props}) {
 					flexDirection={'column'}
 					justifyContent={'flex-start'}
 				>
-					<Title projectTitle={projectTitle} />
+					<Title projectTitle={projectTitle} history={history} />
 					<ModuleNaviTab
 						projectTabs={projectTabs}
 						tabSelected={tabSelected}

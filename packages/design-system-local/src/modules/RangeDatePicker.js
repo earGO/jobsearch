@@ -84,7 +84,6 @@ function RangeDatePicker({
 				<RangePicker
 					ref={datePickerRef}
 					// required props
-					id={id} // momentPropTypes.momentObj or null
 					onChange={handleChange} // PropTypes.func.isRequired
 					format={dateFormat}
 					placeholder={placeholder}
@@ -96,7 +95,6 @@ function RangeDatePicker({
 	)
 }
 RangeDatePicker.propTypes = {
-	id: PropTypes.string,
 	value: PropTypes.array,
 	onChange: PropTypes.func,
 	dateFormat: PropTypes.string,
@@ -106,7 +104,6 @@ RangeDatePicker.propTypes = {
 }
 
 RangeDatePicker.defaultProps = {
-	id: 'useSomeId',
 	value: [],
 	dateFormat: 'DD/MM/YYYY',
 	width: 192,

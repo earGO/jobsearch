@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useRef, createRef} from 'react'
 import PropTypes from 'prop-types'
 import {Icon, Flex, Text, Popover, Card, Button} from '../index'
 import styled from 'styled-components'
@@ -16,75 +16,57 @@ transition-timing-function: {$props=>props.theme.timingFunction.easeInOut};
 `
 /* Z-index adjustment for hint card */
 const HintCard = styled(Card)`
-	z-index: 3;
+z-index: 2147483649;!important;
 	border-width: 0;
 `
 
-class Hint extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			isPopoverOpen: false
-		}
-	}
-
-	render() {
-		const {isPopoverOpen} = this.state //State managing hint popover opening
-		const {
-			size,
-			arrowColor,
-			bgColor,
-			shiftLeft,
-			shiftTop,
-			hintText,
-			color,
-			position
-		} = this.props
-		return (
-			<Flex
-				width={400}
-				height={420}
-				flexDirection={'column'}
-				justifyContent={'center'}
-				alignItems={'center'}
-			>
-				<Popover
-					isOpen={isPopoverOpen}
-					onClickOutside={() => this.setState({isPopoverOpen: false})}
-					position={position} // popover position from ['top','left','right','bottom']
-					/* Content of a hint */
-					content={({position, targetRect, popoverRect}) => (
-						<Popover.ArrowContainer
-							position={position}
-							targetRect={targetRect}
-							popoverRect={popoverRect}
-							arrowColor={arrowColor}
-							arrowSize={10}
-							arrowStyle={{opacity: 1.0, zIndex: 6}}
-						>
-							<HintCard p={3} bg={bgColor} boxShadowSize={'md'}>
-								<Text color={color}>{hintText}</Text>
-							</HintCard>
-						</Popover.ArrowContainer>
-					)}
-					/* Hint card adjustment related to Hint icon */
-					contentLocation={({nudgedLeft, nudgedTop}) => ({
-						top: nudgedTop + shiftTop,
-						left: nudgedLeft + shiftLeft
-					})}
+function Hint({
+	size,
+	arrowColor,
+	bgColor,
+	shiftLeft,
+	shiftTop,
+	hintText,
+	color,
+	position,
+	...props
+}) {
+	const [isPopoverOpen, setPopoverOpen] = useState(false)
+	return (
+		<Popover
+			isOpen={isPopoverOpen}
+			onClickOutside={() => setPopoverOpen(false)}
+			position={position} // popover position from ['top','left','right','bottom']
+			/* Content of a hint */
+			content={({position, targetRect, popoverRect}) => (
+				<Popover.ArrowContainer
+					position={position}
+					targetRect={targetRect}
+					popoverRect={popoverRect}
+					arrowColor={arrowColor}
+					arrowSize={10}
+					arrowStyle={{opacity: 1.0, zIndex: 2147483649}}
 				>
-					<ClickableIcon
-						type={'flat'}
-						onClick={() =>
-							this.setState({isPopoverOpen: !isPopoverOpen})
-						}
-					>
-						<Icon name={'help_outline'} size={size} color={color} />
-					</ClickableIcon>
-				</Popover>
-			</Flex>
-		)
-	}
+					<HintCard p={3} bg={bgColor} boxShadowSize={'md'}>
+						<Text color={color}>{hintText}</Text>
+					</HintCard>
+				</Popover.ArrowContainer>
+			)}
+			/* Hint card adjustment related to Hint icon */
+			contentLocation={({nudgedLeft, nudgedTop}) => ({
+				top: nudgedTop + shiftTop,
+				left: nudgedLeft + shiftLeft
+			})}
+			{...props}
+		>
+			<ClickableIcon
+				type={'flat'}
+				onClick={() => setPopoverOpen(!isPopoverOpen)}
+			>
+				<Icon name={'help_outline'} size={size} color={color} />
+			</ClickableIcon>
+		</Popover>
+	)
 }
 
 Hint.propTypes = {

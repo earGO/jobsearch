@@ -14,7 +14,9 @@ import {
 	Box,
 	Select,
 	Checkbox,
-	Scrollbars
+	Scrollbars,
+	Hint,
+	HintPortalled
 } from '../../../import'
 
 const localActions = globalNavigation.actions
@@ -86,6 +88,10 @@ const ModalBox = styled(Box)`
 	overflow: hidden;
 `
 
+const HintBox = styled(Flex)`
+	z-index: 54;
+`
+
 function CreateProjectModal({...props}) {
 	/* Local state */
 	const [functional, setFunctional] = useState(localFunctional[4])
@@ -150,8 +156,12 @@ function CreateProjectModal({...props}) {
 		closeModal()
 	}
 
+	function getParent() {
+		return document.getElementById('hintParent')
+	}
+
 	return (
-		<Modal isOpen={modalOpened}>
+		<Modal isOpen={modalOpened} id={'hintParent'}>
 			<ModalBox width={800} bg="white" height={680} p={2} pt={1}>
 				<Scrollbars universal style={{height: 680}} ref={scrollBarsRef}>
 					<Flex
@@ -165,9 +175,16 @@ function CreateProjectModal({...props}) {
 						</Box>
 
 						<Box width={1 / 1} mb={3}>
-							<Text fontSize={'12px'} mb={2}>
-								Наименование ОКС
-							</Text>
+							<Flex justifyContent={'space-between'}>
+								<Text fontSize={'12px'} mb={2}>
+									Наименование ОКС
+								</Text>
+								<Hint
+									shiftTop={18}
+									shiftLeft={-20}
+									hintText={'This is a hint text'}
+								/>
+							</Flex>
 							<Input placeholder={'Введите название ОКС'} />
 						</Box>
 						<Flex id={'field-columns'} mb={4}>

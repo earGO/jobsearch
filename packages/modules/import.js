@@ -50,7 +50,8 @@ export {
 	RangeDatePicker,
 	SearchInput,
 	AnimatedSearchInput,
-	DropdownMenu
+	DropdownMenu,
+	Hint
 } from '@ursip-box-front/design-system-local'
 
 export {

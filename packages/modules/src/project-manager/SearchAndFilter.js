@@ -3,7 +3,6 @@ import {
 	TableContentBox,
 	ContentBox,
 	AnimatedSearchInput,
-	FlexContainerBottomDivider,
 	RangeDatePicker,
 	Box,
 	Select,
@@ -24,10 +23,20 @@ const Corrector = styled(TableContentBox)`
 	z-index: 12;
 `
 
+const NonCollapseContainer = styled(Flex)`
+	position: absolute;
+	z-index: 13;
+`
+
+const CollapseContentContainer = styled(ContentBox)`
+	z-index: 14;
+`
+
 function SearchAndFilter({
 	amnt,
 	handleProjectsSort,
 	handleDateFilterChange,
+	handleClearAllFilters,
 	...props
 }) {
 	const dispatch = useDispatch()
@@ -47,7 +56,8 @@ function SearchAndFilter({
 	]
 
 	/* A state to handle filter selector */
-	const [value, setOption] = useState(options[4])
+	const [value, setOption] = useState(null)
+	const [functionalValue, setFunctionalValue] = useState(null)
 
 	const searchQuery = ''
 
@@ -55,7 +65,9 @@ function SearchAndFilter({
 		setOption(newOption)
 		handleProjectsSort(newOption.value)
 	}
-	const onFunctionalChange = newOption => {}
+	const onFunctionalChange = newOption => {
+		setFunctionalValue(newOption)
+	}
 
 	const handleSearch = debounce(200, query =>
 		dispatch(actions.searchCatalogs(query))
@@ -69,70 +81,99 @@ function SearchAndFilter({
 		return (
 			<Corrector>
 				<ContentBox flexDirection={'column'}>
-					<FlexContainerBottomDivider flexDirection={'row'}>
-						<Box p={3}>
-							<AnimatedSearchInput
-								value={searchQuery}
-								onSearch={handleSearch}
-								placeholder="Поиск"
-								shrinkWidth={80}
-								growWidth={160}
-							/>
-						</Box>
-						<Box p={3} pl={0}>
-							<Heading>Проекты ({amnt})</Heading>
-						</Box>
-					</FlexContainerBottomDivider>
-					<Flex flexFlow={'row nowrap'} pt={1}>
-						<Box p={2} id={'sortTypePickerGroup'}>
-							<Box pl={1}>
-								<Text fontSize={'12px'} color="grey">
-									Сортировка
-								</Text>
-							</Box>
-							<Box width={160} p={1}>
-								<Select
-									value={value}
-									onChange={onChange}
-									options={options}
-									size="medium"
+					<Flex
+						flexDirection={'row'}
+						justifyContent={'space-between'}
+					>
+						<NonCollapseContainer>
+							<Box p={3}>
+								<AnimatedSearchInput
+									value={searchQuery}
+									onSearch={handleSearch}
+									placeholder="Поиск"
+									shrinkWidth={80}
+									growWidth={160}
 								/>
 							</Box>
-						</Box>
-						<Box p={2} pl={0} id={'datePickerGroup'}>
-							<Box pl={1}>
-								<Text fontSize={'12px'} color="grey">
-									Дата подачи от и до
-								</Text>
+							<Box p={3} pl={0}>
+								<Heading>Проекты ({amnt})</Heading>
 							</Box>
-							<Box width={292} p={1}>
-								<RangeDatePicker
-									onChange={handleDatesPick}
-									height={42}
-								/>
-							</Box>
-						</Box>
-						<Relative
-							p={2}
-							pl={0}
-							id={'functionPickerGroup'}
-							left={-90}
-						>
-							<Box pl={0}>
-								<Text fontSize={'12px'} color="grey">
-									Функциональное значение
-								</Text>
-							</Box>
-							<Box width={160} p={1}>
-								<Select
-									onChange={onFunctionalChange}
-									options={functionOptions}
-									size="medium"
-									placeholder={'Выбрать'}
-								/>
-							</Box>
-						</Relative>
+							<Box width={630}>{''}</Box>
+						</NonCollapseContainer>
+						<Collapse>
+							<Collapse.Panel
+								key="key1"
+								title="Расширенный поиск"
+								titleAlignment={'flex-end'}
+								pt={2}
+								pb={1}
+							>
+								<CollapseContentContainer
+									flexFlow={'row nowrap'}
+								>
+									<Box p={2} id={'sortTypePickerGroup'}>
+										<Box pl={1}>
+											<Text
+												fontSize={'12px'}
+												color="grey"
+											>
+												Сортировка
+											</Text>
+										</Box>
+										<Box width={160} p={1}>
+											<Select
+												value={value}
+												onChange={onChange}
+												options={options}
+												size="medium"
+											/>
+										</Box>
+									</Box>
+									<Box p={2} pl={0} id={'datePickerGroup'}>
+										<Box pl={1}>
+											<Text
+												fontSize={'12px'}
+												color="grey"
+											>
+												Дата подачи от и до
+											</Text>
+										</Box>
+										<Box width={292} p={1}>
+											<RangeDatePicker
+												onChange={handleDatesPick}
+												height={42}
+											/>
+										</Box>
+									</Box>
+									<Relative
+										p={2}
+										pl={0}
+										id={'functionPickerGroup'}
+										left={-90}
+									>
+										<Box pl={0}>
+											<Text
+												fontSize={'12px'}
+												color="grey"
+											>
+												Функциональное значение
+											</Text>
+										</Box>
+										<Box width={160} p={1}>
+											<Select
+												value={functionalValue}
+												onChange={onFunctionalChange}
+												options={functionOptions}
+												size="medium"
+												placeholder={'Выбрать'}
+											/>
+										</Box>
+									</Relative>
+								</CollapseContentContainer>
+							</Collapse.Panel>
+						</Collapse>
 					</Flex>
+
 					<ContentBox
 						flexDirection={'row'}
 						justifyContent={'flex-end'}
@@ -144,7 +185,9 @@ function SearchAndFilter({
 								type={'flat'}
 								color={'primary'}
 								onClick={() => {
-									handleDateFilterChange(null, null, null)
+									setOption(null)
+									setFunctionalValue(null)
+									handleClearAllFilters(options[1].value)
 								}}
 							>
 								Сбросить фильтры

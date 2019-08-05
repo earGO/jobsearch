@@ -4,7 +4,8 @@ import Icon from './Icon'
 import Text from './Text'
 import propTypes from 'prop-types'
 import styled, {css} from 'styled-components'
-import {space, themeGet} from 'styled-system'
+import {space} from 'styled-system'
+import themeGet from '@styled-system/theme-get'
 import {FIELD_DATA_PROP} from './Form'
 import omit from 'lodash/omit'
 
@@ -25,15 +26,6 @@ const size = ({size = 'medium'}) => {
 	}
 	return css(sizes[size])
 }
-
-// const iconSize = ({size = 'medium'}) => {
-// 	const scales = {
-// 		small: 0.6,
-// 		medium: 0.7,
-// 		large: 0.8
-// 	}
-// 	return `transform: scale(${scales[size]});`
-// }
 
 const background = ({checked, disabled, ...rest}) => {
 	const {checkbox} = rest.theme.colors
@@ -136,9 +128,9 @@ class Checkbox extends Component {
 						disabled={this.props.disabled}
 					>
 						{this.state.checked ? (
-							<Icon name="check" color="white" size={0} />
+							<Icon name="Check" color="white" size={0} />
 						) : (
-							<Icon name="check" color="white" hidden size={0} />
+							<Icon name="Check" color="white" hidden size={0} />
 						)}
 					</StyledCheckbox>
 				</CheckboxContainer>
