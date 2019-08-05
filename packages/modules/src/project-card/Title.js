@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Flex, Box, Text} from '../../import'
+import {Flex, Box, Text, Button, Icon} from '../../import'
 import styled from 'styled-components'
 import {
 	ContentBox,
@@ -14,15 +14,38 @@ const OffsetBox = styled(Box)`
 	position: relative;
 	top: -12%;
 `
+const BackButton = styled(Button)`
+	width: 88px;
+	height: 48px;
+	border-radius: 4px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-content: space-evenly;
+	margin-right: 24px;
+	position: relative;
+	top: -5px;
+`
 
 const AdressText = styled(Text)``
 
-function Title({projectTitle}) {
+const handleBackClick = history => {
+	history.push('/')
+}
+
+function Title({projectTitle, history, ...props}) {
 	if (projectTitle !== undefined) {
 		return (
 			<FlexContainerBottomDivider dividercolor={'border'}>
-				<ContentBox padding={33} justifyContent={'space-between'}>
-					<Flex id-={'leftBox'}>
+				<ContentBox padding={33} justifyContent={'flex-start'}>
+					<BackButton
+						type={'secondary'}
+						onClick={() => handleBackClick(history)}
+					>
+						<Icon name={'arrow_back'} size={20} />
+						<Text fontSize={'14px'}>Назад</Text>
+					</BackButton>
+					<Flex id={'leftBox'}>
 						<Box
 							id={'greenLine'}
 							bg="#2e7d32"
