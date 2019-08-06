@@ -1,0 +1,1745 @@
+{
+  "user": {
+    "id": "mr2w3s0m3",
+    "name": "Barney",
+    "lastname": "Stinson"
+  },
+  "users": [
+    {
+      "id": "mr2w3s0m3",
+    "name": "Barney",
+    "lastname": "Stinson"
+    },
+    {
+      "id": "sch001b0y",
+      "name": "Bart",
+      "lastname": "Simpson"
+    }
+  ],
+  "project": {
+    "idProject": "t3stpr0j3ct",
+    "author": "Barney Stinson",
+    "dateCreated": "08-08-2019",
+    "nickStage": "testStage",
+    "dateClosingStage": "Date",
+    "roleUser": "FEDeveloper",
+    "modifiedBy": "FEtestr",
+    "dateChange": "03-04-2019",
+    "objectName": "ДОУ на 224 мест",
+    "closingStage": "closingStage",
+    "addressGenerated": "г. Москва, Ярцевская улица, д. 34, корп. 2 (ЗАО, Кунцево)",
+    "relatedProjects": [{
+      "id": "related-dumpster",
+      "nickProjectStage": "related-dumster-stage"
+    },
+      {
+        "id": "related-sevage",
+        "nickProjectStage": "related-sevage-stage"
+      }]
+    },
+  "tabs": [
+   {
+     "id":"t3stpr0j3ct",
+    "data":[
+      {
+        "id": "t3stT2b0",
+        "name": "Реквизиты"
+      },
+      {
+        "id": "t3stT2b1",
+        "name": "Исходные данные"
+      },
+      {
+        "id": "t3stT2b1-1",
+        "name": "Результаты инженерных изысканий"
+
+      },
+      {
+        "id": "t3stT2b2",
+        "name": "Проектные решения"
+      },
+      {
+        "id": "t3stT2b3",
+        "name": "Реестр договоров"
+      },
+      {
+        "id": "t3stT2b4",
+        "name": "Информация о закупках"
+      }
+    ]
+   }
+  ],
+  "sections":[
+    {
+      "id":"t3stT2b0",
+      "data":[
+        {
+          "id": "mainrequisitsId",
+          "name": "Реквизиты заказчика"
+        },
+        {
+          "id": "contrrequisitsId",
+          "name": "Реквизиты генподрядчика"
+        }
+      ]},
+    {
+      "id":"t3stT2b1",
+      "data":[
+        {
+        "id": "m21nSolutionsId",
+        "name": "Основные сведения",
+        "tabId": "t3stT2b1",
+        "nick": "main",
+        "sort": "main-sort",
+        "version": "1.0.0",
+        "author": "Barney Stinson",
+        "dateCreated ": "02-02-2019"
+      },
+        {
+          "id": "techParamsId",
+          "name": "Технологические параметры",
+          "tabId": "t3stT2b1",
+          "nick": "tech-params",
+          "sort": "tech-params-sort",
+          "version": "1.0.0",
+          "author": "Barney Stinson",
+          "dateCreated ": "02-02-2019"
+        }
+      ]},
+    {
+      "id":"t3stT2b1-1",
+      "data":[
+        {
+          "id": "hydrologicalId",
+          "name": "Гидрологические изыскания"
+        },
+        {
+          "id": "heodesicId",
+          "name": "Геодезические изыскания"
+        },
+        {
+          "id": "heologicalId",
+          "name": "Геологические изыскания"
+        },
+        {
+          "id": "heofisicalId",
+          "name": "Геофизические изыскания"
+        },
+        {
+          "id": "ecoId",
+          "name": "Экологические изыскания"
+        },
+        {
+          "id": "cadasterId",
+          "name": "Кадастрвоые изыскания"
+        }
+      ]},
+    {
+      "id":"t3stT2b2",
+      "data":[
+      {
+        "id": "safety-section-id",
+        "name": "Решения по безопасности",
+        "tabId": "t3stT2b3",
+        "nick": "main-solutions",
+        "sort": "main-solutions-sort",
+        "version": "1.0.0",
+        "author": "Barney Stinson",
+        "dateCreated ": "02-02-2019"
+      },
+      {
+        "id": "tech-solutions-tab2-id",
+        "name": "Технологические решения",
+        "tabId": "t3stT2b3",
+        "nick": "tech-solutions",
+        "sort": "tech-solutions-sort",
+        "version": "1.0.0",
+        "author": "Barney Stinson",
+        "dateCreated ": "02-02-2019"
+      }
+    ]},
+    {
+      "id":"t3stT2b3",
+      "data":[
+        {
+          "id": "t3stT2b31id",
+          "name": "Договоры с генподрядчиком"
+        },
+        {
+          "id": "t3stT2b32id",
+          "name": "Договоры с надзорами"
+        },
+        {
+          "id": "t3stT2b33id",
+          "name": "Другое"
+        }
+      ]},
+
+    {
+      "id":"t3stT2b4",
+      "data":[
+        {
+          "id": "t3stT2b41id",
+          "name": "План закупок"
+        },
+        {
+          "id": "t3stT2b42id",
+          "name": "Активные конкурсы"
+        },
+        {
+          "id": "t3stT2b43id",
+          "name": "Завершённые закупки"
+        }
+      ]}
+  ],
+  "fields":[
+    {
+      "id":"mainrequisitsId",
+      "data":[
+        [
+          {
+            "id": "common-req-title-id-2",
+            "name": "Реквизиты заказчика",
+            "type": "group",
+            "value": "Общие сведения о решениях"
+          },
+          {
+            "id": "common-req-job-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-Functional-purpose-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-is-it-dangerous-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-financing-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"contrrequisitsId",
+      "data":[
+        [
+          {
+            "id": "common-req-title-id-2",
+            "name": "Реквизиты генподрядчика",
+            "type": "group",
+            "value": "Общие сведения о решениях"
+          },
+          {
+            "id": "common-req-job-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-Functional-purpose-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-is-it-dangerous-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-financing-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"heodesicId",
+      "data":[
+        [
+          {
+            "id": "common-req-title-id-2",
+            "name": "Гидрологические изыскания",
+            "type": "group",
+            "value": "Общие сведения "
+          },
+          {
+            "id": "common-req-job-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-Functional-purpose-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-is-it-dangerous-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-financing-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"hydrologicalId",
+      "data":[
+        [
+          {
+            "id": "common-req-title-id-2",
+            "name": "Геодезические изыскания",
+            "type": "group",
+            "value": "Общие сведения "
+          },
+          {
+            "id": "common-req-job-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-Functional-purpose-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-is-it-dangerous-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-financing-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"heologicalId",
+      "data":[
+        [
+          {
+            "id": "common-req-title-id-2",
+            "name": "Геологические изыскания",
+            "type": "group",
+            "value": "Общие сведения "
+          },
+          {
+            "id": "common-req-job-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-Functional-purpose-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-is-it-dangerous-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-financing-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"heofisicalId",
+      "data":[
+        [
+          {
+            "id": "common-req-title-id-2",
+            "name": "Геофизические изыскания",
+            "type": "group",
+            "value": "Общие сведения "
+          },
+          {
+            "id": "common-req-job-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-Functional-purpose-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-is-it-dangerous-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-financing-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"ecoId",
+      "data":[
+        [
+          {
+            "id": "common-req-title-id-2",
+            "name": "Экологические изыскания",
+            "type": "group",
+            "value": "Общие сведения "
+          },
+          {
+            "id": "common-req-job-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-Functional-purpose-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-is-it-dangerous-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-financing-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"cadasterId",
+      "data":[
+        [
+          {
+            "id": "common-req-title-id-2",
+            "name": "Кадастрвоые изыскания",
+            "type": "group",
+            "value": "Общие сведения "
+          },
+          {
+            "id": "common-req-job-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-Functional-purpose-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-is-it-dangerous-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-financing-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"m21nSolutionsId",
+      "data":[
+        [
+          {
+            "id": "common-info-title-id-2",
+            "name": "Основные сведения",
+            "type": "group",
+            "value": "Общие сведения о решениях"
+          },
+          {
+            "id": "common-info-job-id-2",
+            "name": "Вид работ в решении",
+            "type": "common",
+            "value": "какие-то там работы строительные мб"
+          },
+          {
+            "id": "common-info-Functional-purpose-id-2",
+            "name": "Функциональное назначение htitybq",
+            "type": "common",
+            "value": "производственного и непроизводственного назначения aqetqnaenanaryn"
+          },
+          {
+            "id": "common-info-is-it-dangerous-id-2",
+            "name": "Отношение объекта к особо опасным,\nтехнически сложным, уникальным: atebaetbaetbaetbaetb",
+            "type": "common",
+            "value": "Не относится\n atebaebaebaebaebaetbaetb"
+          },
+          {
+            "id": "common-info-financing-id-2",
+            "name": "Источник финансирования:",
+            "type": "common",
+            "value": "городской бюджет (включен в АИП, есть субсидия qegnbaqebaebaqet b543y 264)"
+          }
+        ],
+        [
+          {
+            "id": "common-info-title-id-2",
+            "name": "Общие сведения о решениях",
+            "type": "group",
+            "value": "Общие сведения о решениях"
+          },
+          {
+            "id": "common-info-job-id-2",
+            "name": "Вид работ в решении",
+            "type": "common",
+            "value": "какие-то там работы строительные мб"
+          },
+          {
+            "id": "common-info-Functional-purpose-id-2",
+            "name": "Функциональное назначение htitybq",
+            "type": "common",
+            "value": "производственного и непроизводственного назначения aqetqnaenanaryn"
+          },
+          {
+            "id": "common-info-is-it-dangerous-id-2",
+            "name": "Отношение объекта к особо опасным,\nтехнически сложным, уникальным: atebaetbaetbaetbaetb",
+            "type": "common",
+            "value": "Не относится\n atebaebaebaebaebaetbaetb"
+          },
+          {
+            "id": "common-info-financing-id-2",
+            "name": "Источник финансирования:",
+            "type": "common",
+            "value": "городской бюджет (включен в АИП, есть субсидия qegnbaqebaebaqet b543y 264)"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"techParamsId",
+      "data":[
+        [
+          {
+            "id": "common-info-title-id-3",
+            "name": "Технологические решения",
+            "value": "Общие сведения",
+            "type": "group"
+          },
+          {
+            "id": "common-info-job-id-3",
+            "sectionId": "tech-params-id",
+            "name": "Вид работ 3  5р  35р 3р",
+            "nick": "common-info-job",
+            "value": "строительство 35рй5нрй5рй3р",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-Functional-purpose-id -43",
+            "sectionId": "tech-params-id",
+            "name": "Функциональное назначение qetbeaqe",
+            "nick": "functional-purpose",
+            "value": "производственного и непроизводственного назначения qetb aqeb qebqeb",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-is-it-dangerous-id-65",
+            "sectionId": "tech-params-id",
+            "name": "Отношение объекта к особо опасным,\nтехнически сложным, уникальным:awrga awrgaw",
+            "nick": "is-it-dangerous",
+            "value": "Не awrg awrg awrg awrg относится\n",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "tech-params-id",
+            "name": "Источник финансирования: aqewb",
+            "nick": "financing",
+            "value": "городской бюджет (включен в АИП, есть субсидия) aqewbraqebae",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "safety-section-id",
+            "name": "Name-dummy",
+            "nick": "financing",
+            "value": "Just a field value fetched from database with section and tab IDs",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "tech-solutions-id",
+            "name": "Name-dummy",
+            "nick": "financing",
+            "value": "Just a field value fetched from database with section and tab IDs",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          }
+        ],
+        [
+          {
+            "id": "common-info-title-id-3",
+            "sectionId": "tech-params-id",
+            "name": "Технологические решения",
+            "nick": "common-info-title",
+            "value": "Общие сведения",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "group",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-job-id-3",
+            "sectionId": "tech-params-id",
+            "name": "Вид работ 3  5р  35р 3р",
+            "nick": "common-info-job",
+            "value": "строительство 35рй5нрй5рй3р",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-Functional-purpose-id -43",
+            "sectionId": "tech-params-id",
+            "name": "Функциональное назначение qetbeaqe",
+            "nick": "functional-purpose",
+            "value": "производственного и непроизводственного назначения qetb aqeb qebqeb",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-is-it-dangerous-id-65",
+            "sectionId": "tech-params-id",
+            "name": "Отношение объекта к особо опасным,\nтехнически сложным, уникальным:awrga awrgaw",
+            "nick": "is-it-dangerous",
+            "value": "Не awrg awrg awrg awrg относится\n",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "tech-params-id",
+            "name": "Источник финансирования: aqewb",
+            "nick": "financing",
+            "value": "городской бюджет (включен в АИП, есть субсидия) aqewbraqebae",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "safety-section-id",
+            "name": "Name-dummy",
+            "nick": "financing",
+            "value": "Just a field value fetched from database with section and tab IDs",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "tech-solutions-id",
+            "name": "Name-dummy",
+            "nick": "financing",
+            "value": "Just a field value fetched from database with section and tab IDs",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"safety-section-id",
+      "data":[
+        [
+          {
+            "id": "common-info-title-id-3",
+            "sectionId": "safety-section-id",
+            "name": "Решения по безопасности",
+            "nick": "common-info-title",
+            "value": "Решения по безопасности",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "group",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-job-id-3",
+            "sectionId": "tech-params-id",
+            "name": "Вид работ 3  5р  35р 3р",
+            "nick": "common-info-job",
+            "value": "строительство 35рй5нрй5рй3р",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-Functional-purpose-id -43",
+            "sectionId": "tech-params-id",
+            "name": "Функциональное назначение qetbeaqe",
+            "nick": "functional-purpose",
+            "value": "производственного и непроизводственного назначения qetb aqeb qebqeb",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-is-it-dangerous-id-65",
+            "sectionId": "tech-params-id",
+            "name": "Отношение объекта к особо опасным,\nтехнически сложным, уникальным:awrga awrgaw",
+            "nick": "is-it-dangerous",
+            "value": "Не awrg awrg awrg awrg относится\n",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "tech-params-id",
+            "name": "Источник финансирования: aqewb",
+            "nick": "financing",
+            "value": "городской бюджет (включен в АИП, есть субсидия) aqewbraqebae",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "safety-section-id",
+            "name": "Name-dummy",
+            "nick": "financing",
+            "value": "Just a field value fetched from database with section and tab IDs",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "tech-solutions-id",
+            "name": "Name-dummy",
+            "nick": "financing",
+            "value": "Just a field value fetched from database with section and tab IDs",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          }
+        ],
+        [
+          {
+            "id": "common-info-title-id-3",
+            "sectionId": "tech-params-id",
+            "name": "Технологические решения",
+            "nick": "common-info-title",
+            "value": "Общие сведения",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "group",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-job-id-3",
+            "sectionId": "tech-params-id",
+            "name": "Вид работ 3  5р  35р 3р",
+            "nick": "common-info-job",
+            "value": "строительство 35рй5нрй5рй3р",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-Functional-purpose-id -43",
+            "sectionId": "tech-params-id",
+            "name": "Функциональное назначение qetbeaqe",
+            "nick": "functional-purpose",
+            "value": "производственного и непроизводственного назначения qetb aqeb qebqeb",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-is-it-dangerous-id-65",
+            "sectionId": "tech-params-id",
+            "name": "Отношение объекта к особо опасным,\nтехнически сложным, уникальным:awrga awrgaw",
+            "nick": "is-it-dangerous",
+            "value": "Не awrg awrg awrg awrg относится\n",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "tech-params-id",
+            "name": "Источник финансирования: aqewb",
+            "nick": "financing",
+            "value": "городской бюджет (включен в АИП, есть субсидия) aqewbraqebae",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "safety-section-id",
+            "name": "Name-dummy",
+            "nick": "financing",
+            "value": "Just a field value fetched from database with section and tab IDs",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "tech-solutions-id",
+            "name": "Name-dummy",
+            "nick": "financing",
+            "value": "Just a field value fetched from database with section and tab IDs",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"tech-solutions-tab2-id",
+      "data":[
+        [
+          {
+            "id": "common-info-title-id-3",
+            "sectionId": "safety-section-id",
+            "name": "Технологические решения",
+            "nick": "common-info-title",
+            "value": "Технологические решения таба 2",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "group",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-job-id-3",
+            "sectionId": "tech-params-id",
+            "name": "Вид работ 3  5р  35р 3р",
+            "nick": "common-info-job",
+            "value": "строительство 35рй5нрй5рй3р",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-Functional-purpose-id -43",
+            "sectionId": "tech-params-id",
+            "name": "Функциональное назначение qetbeaqe",
+            "nick": "functional-purpose",
+            "value": "производственного и непроизводственного назначения qetb aqeb qebqeb",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-is-it-dangerous-id-65",
+            "sectionId": "tech-params-id",
+            "name": "Отношение объекта к особо опасным,\nтехнически сложным, уникальным:awrga awrgaw",
+            "nick": "is-it-dangerous",
+            "value": "Не awrg awrg awrg awrg относится\n",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "tech-params-id",
+            "name": "Источник финансирования: aqewb",
+            "nick": "financing",
+            "value": "городской бюджет (включен в АИП, есть субсидия) aqewbraqebae",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "safety-section-id",
+            "name": "Name-dummy",
+            "nick": "financing",
+            "value": "Just a field value fetched from database with section and tab IDs",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "tech-solutions-id",
+            "name": "Name-dummy",
+            "nick": "financing",
+            "value": "Just a field value fetched from database with section and tab IDs",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          }
+        ],
+        [
+          {
+            "id": "common-info-title-id-3",
+            "sectionId": "tech-params-id",
+            "name": "Технологические решения",
+            "nick": "common-info-title",
+            "value": "Общие сведения",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "group",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-job-id-3",
+            "sectionId": "tech-params-id",
+            "name": "Вид работ 3  5р  35р 3р",
+            "nick": "common-info-job",
+            "value": "строительство 35рй5нрй5рй3р",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-Functional-purpose-id -43",
+            "sectionId": "tech-params-id",
+            "name": "Функциональное назначение qetbeaqe",
+            "nick": "functional-purpose",
+            "value": "производственного и непроизводственного назначения qetb aqeb qebqeb",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-is-it-dangerous-id-65",
+            "sectionId": "tech-params-id",
+            "name": "Отношение объекта к особо опасным,\nтехнически сложным, уникальным:awrga awrgaw",
+            "nick": "is-it-dangerous",
+            "value": "Не awrg awrg awrg awrg относится\n",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "tech-params-id",
+            "name": "Источник финансирования: aqewb",
+            "nick": "financing",
+            "value": "городской бюджет (включен в АИП, есть субсидия) aqewbraqebae",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "safety-section-id",
+            "name": "Name-dummy",
+            "nick": "financing",
+            "value": "Just a field value fetched from database with section and tab IDs",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          },
+
+          {
+            "id": "common-info-financing-id",
+            "sectionId": "tech-solutions-id",
+            "name": "Name-dummy",
+            "nick": "financing",
+            "value": "Just a field value fetched from database with section and tab IDs",
+            "author": "Barney Stinson",
+            "dateCreated ": "03-02-2019",
+            "type": "project_manager.project_user_element.type",
+            "version": "project_manager.project_user_element.version",
+            "sort": "project_manager.project_user_element.sort",
+            "idFile": "project_manager.project_user_element.idFile",
+            "useElement": "user_element BOOLEAN"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"t3stT2b31id",
+      "data":[
+        [
+          {
+            "id": "common-req-title-id-2",
+            "name": "Договоры с генподрядчиком",
+            "type": "group",
+            "value": "Общие сведения "
+          },
+          {
+            "id": "common-req-job-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-Functional-purpose-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-is-it-dangerous-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-financing-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          }
+        ]
+      ]
+    },
+   {
+      "id":"t3stT2b32id",
+      "data":[
+        [
+          {
+            "id": "common-req-title-id-2",
+            "name": "Договоры с надзорами",
+            "type": "group",
+            "value": "Общие сведения "
+          },
+          {
+            "id": "common-req-job-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-Functional-purpose-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-is-it-dangerous-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-financing-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"t3stT2b33id",
+      "data":[
+        [
+          {
+            "id": "common-req-title-id-2",
+            "name": "Другое",
+            "type": "group",
+            "value": "Общие сведения "
+          },
+          {
+            "id": "common-req-job-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-Functional-purpose-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-is-it-dangerous-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-financing-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"t3stT2b41id",
+      "data":[
+        [
+          {
+            "id": "common-req-title-id-2",
+            "name": "План закупок",
+            "type": "group",
+            "value": "Общие сведения "
+          },
+          {
+            "id": "common-req-job-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-Functional-purpose-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-is-it-dangerous-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-financing-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"t3stT2b42id",
+      "data":[
+        [
+          {
+            "id": "common-req-title-id-2",
+            "name": "Активные конкурсы",
+            "type": "group",
+            "value": "Общие сведения "
+          },
+          {
+            "id": "common-req-job-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-Functional-purpose-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-is-it-dangerous-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-financing-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          }
+        ]
+      ]
+    },
+    {
+      "id":"t3stT2b43id",
+      "data":[
+        [
+          {
+            "id": "common-req-title-id-2",
+            "name": "Завершённые закупки",
+            "type": "group",
+            "value": "Общие сведения "
+          },
+          {
+            "id": "common-req-job-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-Functional-purpose-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-is-it-dangerous-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          },
+          {
+            "id": "common-req-financing-id-2",
+            "name": "название-заглушка",
+            "type": "common",
+            "value": "поле-заглушка"
+          }
+        ]
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "stage": "OBIN",
+      "projects": [
+        {
+          "idProject": "projectid01",
+          "author": "Barney Stinson",
+          "dateCreated": "2019-08-05",
+          "dateChange": "2019-08-15",
+          "objectName": "ДОУ на 225 мест",
+          "addressGenerated": "г. Москва, Ярцевская улица, д. 34, корп. 2 (ЗАО, Кунцево)",
+          "field": [
+            {
+              "nick": "type",
+              "value": "BIM-проект"
+            },
+            {
+              "nick": "number",
+              "value": "127/18"
+            },
+            {
+              "nick": "progress",
+              "value": "0/5"
+            }
+          ]
+        },
+        {
+              "idProject": "projectid02",
+              "author": "Bart Simpson",
+              "dateCreated": "2016-05-05",
+          "dateChange": "2018-05-05",
+              "objectName": "Школа на 120 мест",
+              "addressGenerated": "г. Москва, Нижний Сусальный пер, Тестовый объект №987",
+          "field": [
+            {
+              "nick": "type",
+              "value": "не BIM-проект"
+            },
+            {
+              "nick": "number",
+              "value": "987/18"
+            },
+            {
+              "nick": "progress",
+              "value": "1/5"
+            }
+          ]
+        },
+        {
+          "idProject": "projectid03",
+          "author": "Bart Simpson",
+          "dateCreated": "2017-06-07",
+          "dateChange": "2018-02-15",
+          "objectName": "Магазин детского питания",
+          "addressGenerated": "г. Москва, 3-й Силикатный, Тестовый объект №587",
+          "field": [
+            {
+              "nick": "type",
+              "value": "почти BIM-проект"
+            },
+            {
+              "nick": "number",
+              "value": "587/18"
+            },
+            {
+              "nick": "progress",
+              "value": "4/5"
+            }
+          ]
+
+        }
+          ]
+    },
+    {
+      "stage": "PROJECTING",
+      "projects": [
+        {
+          "idProject": "projectId11",
+          "author": "Barney Stinson",
+          "dateCreated": "2018-05-05",
+          "dateChange": "2019-02-05",
+          "objectName": "г. Москва, ААБ. Тестовый объект №107",
+          "addressGenerated": "г. Москва, ААБ. Тестовый объект №107",
+          "field": [
+            {
+              "nick": "type",
+              "value": "BIM-проект"
+            },
+            {
+              "nick": "number",
+              "value": "107/18"
+            },
+            {
+              "nick": "progress",
+              "value": "0/5"
+            }
+          ]
+        },
+        {
+          "idProject": "projectId12",
+          "author": "Bart Simpson",
+          "dateCreated": "2012-03-15",
+          "dateChange": "2019-03-05",
+          "objectName": "ВЫР абфрвалг. Тестовый объект №187",
+          "addressGenerated": "г. Люберцы МО, ААБ. Тестовый объект №187",
+          "field": [
+            {
+              "nick": "type",
+              "value": "nonBIM-проект"
+            },
+            {
+              "nick": "number",
+              "value": "187/18"
+            },
+            {
+              "nick": "progress",
+              "value": "3/5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SMR",
+      "projects": [
+        {
+          "idProject": "projectId31",
+          "author": "Barney Stinson",
+          "dateCreated": "2016-05-05",
+          "dateChange": "2019-02-27",
+          "objectName": "г. Москва, ААБ. Тестовый объект №108",
+          "addressGenerated": "г. Москва, ААБ. Тестовый объект №108",
+          "field": [
+            {
+              "nick": "type",
+              "value": "BIM-проект"
+            },
+            {
+              "nick": "number",
+              "value": "108/19"
+            },
+            {
+              "nick": "progress",
+              "value": "1/5"
+            }
+          ]
+        },
+        {
+          "idProject": "projectId32",
+          "author": "Bart Simpson",
+          "dateCreated": "2014-03-15",
+          "dateChange": "2019-01-25",
+          "objectName": "Замороженный долгострой",
+          "addressGenerated": "г. Реутов МО, ААБ. Носовихинское шоссе 35",
+          "field": [
+            {
+              "nick": "type",
+              "value": "part-BIM-проект"
+            },
+            {
+              "nick": "number",
+              "value": "487/18"
+            },
+            {
+              "nick": "progress",
+              "value": "4/7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "OPER",
+      "projects": [
+        {
+          "idProject": "projectId41",
+          "author": "Barney Stinson",
+          "dateCreated": "2011-08-21",
+          "dateChange": "2019-05-05",
+          "objectName": "Тестовый объект в эксплуатации №808",
+          "addressGenerated": "г. Москва, Нижний Сусальный пер., д.10",
+          "field": [
+            {
+              "nick": "type",
+              "value": "BIM-проект"
+            },
+            {
+              "nick": "number",
+              "value": "808/11"
+            },
+            {
+              "nick": "progress",
+              "value": "5/5"
+            }
+          ]
+        },
+        {
+          "idProject": "projectId42",
+          "author": "Bart Simpson",
+          "dateCreated": "2012-03-15",
+          "dateChange": "2019-04-25",
+          "objectName": "Тестовый БЦ в эксплуатации",
+          "addressGenerated": "г. Реутов МО, Носовихинское шоссе 15",
+          "field": [
+            {
+              "nick": "type",
+              "value": "part-BIM-проект"
+            },
+            {
+              "nick": "number",
+              "value": "987/12"
+            },
+            {
+              "nick": "progress",
+              "value": "6/7"
+            }
+          ]
+        },
+        {
+          "idProject": "projectId43",
+          "author": "Bart Simpson",
+          "dateCreated": "2014-03-15",
+          "dateChange": "2019-01-25",
+          "objectName": "Тестовая ТЭЦ",
+          "addressGenerated": "г. Москва, Котельники, Тэц 14",
+          "field": [
+            {
+              "nick": "type",
+              "value": "part-BIM-проект"
+            },
+            {
+              "nick": "number",
+              "value": "687/14"
+            },
+            {
+              "nick": "progress",
+              "value": "5/8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stage": "SNOS",
+      "projects": [
+        {
+          "idProject": "projectId51",
+          "author": "Barney Stinson",
+          "dateCreated": "2018-08-21",
+          "dateChange": "2019-02-05",
+          "objectName": "Тестовый объект под снос №1028",
+          "addressGenerated": "г. Москва, Нижний Сусальный пер., д.10",
+          "field": [
+            {
+              "nick": "type",
+              "value": "BIM-проект"
+            },
+            {
+              "nick": "number",
+              "value": "1028/18"
+            },
+            {
+              "nick": "progress",
+              "value": "2/5"
+            }
+          ]
+        },
+        {
+          "idProject": "projectId52",
+          "author": "Barney Stinson",
+          "dateCreated": "2017-08-21",
+          "dateChange": "2018-12-25",
+          "objectName": "Тестовый объект под снос №928",
+          "addressGenerated": "г. Москва, Нижний Сусальный пер., д.15",
+          "field": [
+            {
+              "nick": "type",
+              "value": "BIM-проект"
+            },
+            {
+              "nick": "number",
+              "value": "928/17"
+            },
+            {
+              "nick": "progress",
+              "value": "4/5"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "main_nav": [
+    {
+      "id": "main",
+      "value": "Главная"
+    },
+    {
+      "id": "tools",
+      "value": "Инструменты"
+    },
+    {
+      "id": "services",
+      "value": "Услуги"
+    },
+    {
+      "id": "help",
+      "value": "Помощь"
+    },
+    {
+      "id": "oshs",
+      "value": "ОШС"
+    }
+
+  ],
+  "personal_nav": [
+      {
+        "id": "All",
+        "value": "Все стадии"
+      },
+      {
+        "id": "OBIN",
+        "value": "ОБИН"
+      },
+      {
+        "id": "PROJECTING",
+        "value": "Проектирование"
+      },
+      {
+        "id": "SMR",
+        "value": "Строительство"
+      },
+      {
+        "id": "OPER",
+        "value": "Эксплуатация"
+      },
+      {
+        "id": "SNOS",
+        "value": "Снос"
+      }
+    ]
+
+}
