@@ -1,15 +1,18 @@
 {
-  "name": "root",
+  "name": "jobsearch",
   "private": true,
   "scripts": {
     "test": "FORCE_COLOR=true lerna run lint && CI=true FORCE_COLOR=true lerna run test -- --coverage",
-    "deploy": "FORCE_COLOR=true lerna run deploy"
+    "deploy": "FORCE_COLOR=true lerna run deploy",
+    "storybook": "cd packages/storybook && yarn storybook",
+    "clean": "oao clean"
   },
   "workspaces": {
     "packages": [
       "packages/apps/*",
       "packages/components",
-      "packages/storybook"
+      "packages/storybook",
+      "packages/styled"
     ],
     "nohoist": [
       "**/webpack-dev-server",
@@ -20,7 +23,8 @@
   "devDependencies": {
     "jest-prop-type-error": "^1.1.0",
     "lerna": "^3.10.7",
-    "prettier": "^1.16.1"
+    "oao": "1.6.0",
+    "prettier": "1.18.2"
   },
   "dependencies": {
     "babel-eslint": "10.0.1",

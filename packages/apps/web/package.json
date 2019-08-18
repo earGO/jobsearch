@@ -1,10 +1,11 @@
 {
-  "name": "@project/app-one",
+  "name": "@jobsearch/web",
   "version": "1.0.0",
   "homepage": "https://react-workspaces.github.io/react-workspaces-playground",
   "private": true,
   "dependencies": {
-    "@project/components": "1.0.0",
+    "@jobsearch/components": "1.0.0",
+    "@jobsearch/styled": "1.0.0",
     "@react-workspaces/react-scripts": "3.0.1-alpha-07",
     "cross-env": "5.0.5",
     "enzyme": "^3.9.0",

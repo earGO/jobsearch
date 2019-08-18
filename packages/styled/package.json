@@ -1,0 +1,11 @@
+{
+  "name": "@jobsearch/styled",
+  "version": "1.0.0",
+  "main": "index.js",
+  "main:src": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "react": "16.8.6",
+    "styled-components": "4.3.2"
+  }
+}
