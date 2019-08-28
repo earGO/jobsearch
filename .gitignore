@@ -19,6 +19,7 @@ __snapshots__
 
 # misc
 *.idea
+*.vscode
 
 .DS_Store
 .env.local

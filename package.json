@@ -5,7 +5,8 @@
     "test": "FORCE_COLOR=true lerna run lint && CI=true FORCE_COLOR=true lerna run test -- --coverage",
     "deploy": "FORCE_COLOR=true lerna run deploy",
     "storybook": "cd packages/storybook && yarn storybook",
-    "clean": "oao clean"
+    "clean": "oao clean",
+    "reinstall": "oao clean && yarn"
   },
   "workspaces": {
     "packages": [
@@ -23,7 +24,7 @@
   "devDependencies": {
     "jest-prop-type-error": "^1.1.0",
     "lerna": "^3.10.7",
-    "oao": "1.6.0",
+    "oao": "^1.7.0",
     "prettier": "1.18.2"
   },
   "dependencies": {
