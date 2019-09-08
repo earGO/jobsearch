@@ -26,9 +26,9 @@ function LayoutComponent({children, ...props}) {
 				<div className="logo" />
 				<Menu
 					theme="dark"
-					defaultSelectedKeys={['1']}
 					mode="inline"
 					onClick={changeRoute}
+					defaultSelectedKeys={['main']}
 				>
 					{screens.map(screen => {
 						return (

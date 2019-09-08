@@ -20,6 +20,13 @@ export const screens = [
 		iconName: 'unordered-list',
 		path: '/dictionaries',
 		component: React.lazy(() => import('./Screens/Dictionaries'))
+	},
+	{
+		key: 'companies',
+		menuName: 'Companies',
+		iconName: 'bank',
+		path: '/companies',
+		component: React.lazy(() => import('./Screens/Companies'))
 	}
 ];
 
