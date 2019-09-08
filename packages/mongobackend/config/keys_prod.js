@@ -9,4 +9,4 @@ module.exports = {
 
 	/*======================CORS domains whitelist========================*/
 	WHITELIST: process.env.WHITELIST
-}
+};

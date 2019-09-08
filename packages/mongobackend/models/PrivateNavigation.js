@@ -1,8 +1,11 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 PrivateNavigationSchema = new mongoose.Schema({
-    name:String
+	name: String
+});
 
-})
-
-module.exports = mongoose.model('PrivateNavigation', PrivateNavigationSchema, 'PrivateNavigation')
+module.exports = mongoose.model(
+	'PrivateNavigation',
+	PrivateNavigationSchema,
+	'PrivateNavigation'
+);
