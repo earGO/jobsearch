@@ -5,16 +5,20 @@ import Layout from './Common/Layout';
 
 import Loading from './Common/Loading';
 
-const screens = [
+export const screens = [
 	{
 		key: 'main',
 		exact: true,
-		path: '/',
+		menuName: 'Dashboard',
+		iconName: 'dashboard',
+		path: '/main',
 		component: React.lazy(() => import('./Screens/Dashboard'))
 	},
 	{
 		key: 'dictionaries',
-		path: '/disctionaries',
+		menuName: 'Dictionaries',
+		iconName: 'unordered-list',
+		path: '/dictionaries',
 		component: React.lazy(() => import('./Screens/Dictionaries'))
 	}
 ];
