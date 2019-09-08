@@ -5,11 +5,7 @@ const express = require('express'),
 	port = process.env.PORT || 5010,
 	keys = require('./config/keys'),
 	seeds = require('./seeds'),
-	Project = require('./models/Project'),
-	Tab = require('./models/Tab'),
-	Section = require('./models/Section'),
-	Group = require('./models/Group'),
-	Field = require('./models/Field');
+	Tab = require('./models/Tab');
 
 app.use(express.static('public'));
 app.use(bodyParser.text());
