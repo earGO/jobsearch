@@ -17,7 +17,8 @@
     "enzyme-adapter-react-16": "^1.12.1",
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "styled-components": "4.3.2"
   },
   "eslintConfig": {
     "extends": "react-app"
